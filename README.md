@@ -1,6 +1,6 @@
 <div align="center">
 
-# ||[ **EIRSVi** ]||
+# |[ **EIRSVi** ]|
 
 
 ### **To Be Educated Is To Be Changed**
@@ -27,6 +27,8 @@
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=EIRSVi&repo=management-sys&theme=radical&hide_border=true" />
   </a>
 </p>
+
+
 ### **Tech Stack**
 
 <p align="center">
@@ -40,8 +42,6 @@
 
 
 
-
-
 ### **Tracking**
 ![live](https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi)
 
@@ -50,7 +50,7 @@
 
 ### **Let's Connect**
 
-https://www.srievi.tech/
+srievi@tuta.io
 
 
 </div>
