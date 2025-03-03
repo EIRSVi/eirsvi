@@ -17,12 +17,16 @@
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=EIRSVi&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="EIRSVi's GitHub Stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=EIRSVi&theme=radical&hide_border=true" alt="EIRSVi's GitHub Streak" />
 </p>
 
 ---
 
-### **📂 Featured Repository**
+### **Most Used Languages***
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=EIRSVi&layout=donut&theme=radical&hide_border=true)](https://github.com/EIRSVi)
+
+---
+
+### **Featured Repository**
 
 <p align="center">
   <a href="https://github.com/EIRSVi/management-sys">
@@ -34,6 +38,6 @@
 
 ### **📫 Let's Connect!**
 
-
+[![trophy](https://github-profile-trophy.vercel.app/?username=EIRSVi&theme=radical&row=1&column=7)](https://github.com/ryo-ma/github-profile-trophy)
 
 </div>
