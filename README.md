@@ -1,7 +1,7 @@
 <div align="center">
 
 
-# | **EIRSVi** |
+# || **EIRSVi** ||
 
 
 ### **To Be Educated Is To Be Changed**
@@ -45,6 +45,8 @@
 
 ### **Tracking**
 ![live](https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi)
+<br> OR </br>
+https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi
 
 
 
