@@ -26,18 +26,22 @@
 
 ---
 
-### **Featured Repository**
-
+### **Repository**
 <p align="center">
   <a href="https://github.com/EIRSVi/management-sys">
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=EIRSVi&repo=management-sys&theme=radical&hide_border=true" />
+  </a>
+  <a href="https://github.com/EIRSVi/authentication-rwx">
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=EIRSVi&repo=management-sys&theme=radical&hide_border=true" />
   </a>
 </p>
 
 ---
 
-### **📫 Let's Connect!**
+### **GitHub Rank Level**
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=EIRSVi&theme=radical&row=1&column=7)](https://github.com/ryo-ma/github-profile-trophy)
 
+### **Tracking**
+[![Harlok's WakaTime stats](https://github-readme-stats.vercel.app/api/wakatime?username=ffflabs)](https://github.com/eirsvi/github-readme-stats)
 </div>
