@@ -1,6 +1,6 @@
 <div align="center">
 
-<span style="font-size: 9.5em; font-family: 'JetBrains Mono', monospace; font-weight: bold; color: #00ffff;">Vi</span>
+##### ****Vi****
 
 ### **Tech Stack**
 
