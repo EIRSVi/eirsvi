@@ -44,8 +44,7 @@
 
 
 ### **Tracking**
-![EIRSVi's WakaTime Stats](https://waka-readme-stats.vercel.app/api?username=eirsvi&theme=dark)
-
+Coming Soon!
 
 
 
