@@ -44,7 +44,7 @@
 
 
 ### **Tracking**
-[![EIRSVi's Time stats](https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi)](https://github.com/anuraghazra/github-readme-stats)
+[![EIRSVi's Time stats](https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi)]
 
 
 
