@@ -1,29 +1,31 @@
 <div align="center">
 
-### ***Vi***
+# *Vi*
 
-# **Tech Stack**
+---
+
+### **Tech Stack**
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=laravel,linux,git,bash,vscode,idea,atom,java,py,js,ts,react,nextjs," />
 </p>
 
-# **To Be Educated Is To Be Changed**
+### **To Be Educated Is To Be Changed**
 
 
 
-# **GitHub Stats**
+### **GitHub Stats**
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=EIRSVi&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="EIRSVi's GitHub Stats" />
 </p>
 
-# **Most Used Languages**
+### **Most Used Languages**
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=EIRSVi&layout=donut&theme=radical&hide_border=true)](https://github.com/EIRSVi)
 
 
 
-# **Repository**
+### **Repository**
 <p align="center">
   <a href="https://github.com/EIRSVi/management-sys">
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=EIRSVi&repo=management-sys&theme=radical&hide_border=true" />
@@ -35,18 +37,18 @@
 
 
 
-# **GitHub Rank Level**
+### **GitHub Rank Level**
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=EIRSVi&theme=radical&row=1&column=7)]
 
 
 
-# **Tracking**
+### **Tracking**
 [![EIRSVi's WakaTime stats](https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi)]
 
 
 
-# **Let's Connect**
+### **Let's Connect**
 
 https://www.srievi.tech/
 
