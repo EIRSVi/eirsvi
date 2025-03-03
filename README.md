@@ -1,6 +1,6 @@
 <div align="center">
 
-# **EIRSVi**
+# |||[ **EIRSVi** ]|||
 
 ---
 
@@ -44,7 +44,8 @@
 
 
 ### **Tracking**
-[![EIRSVi's WakaTime stats](https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi)]
+[![EIRSVi's Time stats](https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi)](https://github.com/anuraghazra/github-readme-stats)
+
 
 
 
