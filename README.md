@@ -1,6 +1,6 @@
 <div align="center">
 
-# |[ **EIRSVi** ]|
+# | **EIRSVi** |
 
 
 ### **To Be Educated Is To Be Changed**
@@ -24,7 +24,7 @@
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=EIRSVi&repo=management-sys&theme=radical&hide_border=true" />
   </a>
   <a href="https://github.com/EIRSVi/authentication-rwx">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=EIRSVi&repo=management-sys&theme=radical&hide_border=true" />
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=EIRSVi&repo=authentication-rwx&theme=radical&hide_border=true" />
   </a>
 </p>
 
