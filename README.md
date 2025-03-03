@@ -1,14 +1,7 @@
 <div align="center">
 
-# |||[ **EIRSVi** ]|||
+# ||[ **EIRSVi** ]||
 
----
-
-### **Tech Stack**
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=laravel,linux,git,bash,vscode,idea,atom,java,py,js,ts,react,nextjs," />
-</p>
 
 ### **To Be Educated Is To Be Changed**
 
@@ -34,17 +27,23 @@
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=EIRSVi&repo=management-sys&theme=radical&hide_border=true" />
   </a>
 </p>
+### **Tech Stack**
 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=laravel,linux,git,bash,vscode,idea,atom,java,py,js,ts,react,nextjs," />
+</p>
 
 
 ### **GitHub Rank Level**
 
-[![trophy](https://github-profile-trophy.vercel.app/?username=EIRSVi&theme=radical&row=1&column=7)]
+![trophy](https://github-profile-trophy.vercel.app/?username=EIRSVi&theme=radical&row=1&column=7)
+
+
 
 
 
 ### **Tracking**
-Coming Soon!
+![live](https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi)
 
 
 
