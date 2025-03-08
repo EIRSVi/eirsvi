@@ -1,0 +1,3735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shell Commands Reference</title>
+    <style>
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .dropdown {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .dropdown-header {
+            background-color: #f1f1f1;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .dropdown-header:hover {
+            background-color: #e9e9e9;
+        }
+        
+        .dropdown-content {
+            display: none;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .dropdown-content.active {
+            display: block;
+        }
+        
+        .example {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-left: 3px solid #2c3e50;
+            margin: 10px 0;
+            font-family: 'JetBrains Mono', monospace;
+            overflow-x: auto;
+        }
+        
+        .sub-item {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Introduction to Shell</h1>
+        
+        <!-- Shell Commands Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Shell Commands
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. /bin/bash</h3>
+                    <p>The bash shell executable path. You can use this to start a new bash shell instance.</p>
+                    <div class="example">
+                        $ /bin/bash<br>
+                        # This starts a new bash shell
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. which</h3>
+                    <p>Locates a command's executable in your PATH.</p>
+                    <div class="example">
+                        $ which ls<br>
+                        /bin/ls<br><br>
+                        $ which python<br>
+                        /usr/bin/python
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. type operator</h3>
+                    <p>Shows information about a command, whether it's an alias, function, or executable.</p>
+                    <div class="example">
+                        $ type ls<br>
+                        ls is aliased to 'ls --color=auto'<br><br>
+                        $ type cd<br>
+                        cd is a shell builtin
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Shell Variables Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Shell Variables
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Variable in the shell</h3>
+                    <p>Creating and using variables in the shell.</p>
+                    <div class="example">
+                        $ name="John"<br>
+                        $ echo $name<br>
+                        John
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Variable in the quotes</h3>
+                    <p>Using variables within different types of quotes.</p>
+                    <div class="example">
+                        $ name="John"<br>
+                        $ echo "Hello, $name"<br>
+                        Hello, John<br><br>
+                        $ echo 'Hello, $name'<br>
+                        Hello, $name
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. $SHELL</h3>
+                    <p>Environment variable that contains the path to the current shell.</p>
+                    <div class="example">
+                        $ echo $SHELL<br>
+                        /bin/bash
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. $PATH</h3>
+                    <p>Environment variable that lists directories where executable programs are located.</p>
+                    <div class="example">
+                        $ echo $PATH<br>
+                        /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Shell History Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Shell History
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. !n</h3>
+                    <p>Execute the nth command in history.</p>
+                    <div class="example">
+                        $ history<br>
+                        1 ls<br>
+                        2 cd Documents<br>
+                        3 cat file.txt<br><br>
+                        $ !2<br>
+                        cd Documents
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Ctrl-r</h3>
+                    <p>Reverse search through command history.</p>
+                    <div class="example">
+                        Press Ctrl-r and type part of a command to search for it.<br>
+                        (reverse-i-search)`ls': ls -la /home
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. ~/.bash_history</h3>
+                    <p>File that stores your command history.</p>
+                    <div class="example">
+                        $ cat ~/.bash_history<br>
+                        ls<br>
+                        cd Documents<br>
+                        vim notes.txt<br>
+                        ./script.sh
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Regular Expression Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Regular Expression
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. grep</h3>
+                    <p>Search for patterns in files using regular expressions.</p>
+                    <div class="example">
+                        $ grep "error" log.txt<br>
+                        2023-05-10 15:30:22 error: connection refused<br><br>
+                        $ grep -i "warning" log.txt<br>
+                        2023-05-10 14:22:10 WARNING: disk space low
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. rename</h3>
+                    <p>Rename files using regular expressions.</p>
+                    <div class="example">
+                        $ ls<br>
+                        file1.txt file2.txt file3.txt<br><br>
+                        $ rename 's/file/document/' *.txt<br>
+                        $ ls<br>
+                        document1.txt document2.txt document3.txt
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. sed bash history</h3>
+                    <p>Using sed to manipulate text from bash history.</p>
+                    <div class="example">
+                        $ history | sed 's/^[0-9]\+//'<br>
+                        # This removes the line numbers from history output<br><br>
+                        $ history | sed -n '/git/p'<br>
+                        # This shows only history entries containing "git"
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Practice</h3>
+                    <p>Examples of combining regular expressions with shell commands.</p>
+                    <div class="example">
+                        $ grep -E "^[0-9]{3}-[0-9]{3}-[0-9]{4}$" contacts.txt<br>
+                        # Find phone numbers in format XXX-XXX-XXXX<br><br>
+                        $ find . -type f -name "*.log" | xargs grep "ERROR"<br>
+                        # Find all ERROR messages in log files
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h1>Introduction to VI and Scripting</h1>
+        
+        <!-- Introduction to VI Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Introduction to VI
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Vim</h3>
+                    <p>Vim is an improved version of the vi editor, available on most Unix-like systems.</p>
+                    <div class="example">
+                        $ vim filename.txt<br>
+                        # Opens the file in vim editor
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. :q! exiting vi</h3>
+                    <p>Command to quit vi without saving changes.</p>
+                    <div class="example">
+                        # Press Esc to ensure you're in command mode<br>
+                        # Type :q!<br>
+                        # Press Enter<br>
+                        # This will quit vi without saving any changes
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. A for insert</h3>
+                    <p>Command to enter insert mode at the end of the current line.</p>
+                    <div class="example">
+                        # Press Esc to ensure you're in command mode<br>
+                        # Press A<br>
+                        # Now you can type text at the end of the line<br>
+                        # Press Esc to return to command mode
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. :w write to file</h3>
+                    <p>Command to save changes to the file.</p>
+                    <div class="example">
+                        # Press Esc to ensure you're in command mode<br>
+                        # Type :w<br>
+                        # Press Enter<br>
+                        # This will save the file without exiting<br><br>
+                        # To save and exit, use :wq
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. 0 and $ start and end of line</h3>
+                    <p>Commands to move cursor to the beginning and end of the current line.</p>
+                    <div class="example">
+                        # Press Esc to ensure you're in command mode<br>
+                        # Press 0 (zero) to move to the start of the line<br>
+                        # Press $ to move to the end of the line
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. W and b word and back</h3>
+                    <p>Commands to navigate forward and backward by words.</p>
+                    <div class="example">
+                        # Press Esc to ensure you're in command mode<br>
+                        # Press w to move forward one word<br>
+                        # Press b to move backward one word<br>
+                        # Press 3w to move forward three words
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>7. D for delete</h3>
+                    <p>Command to delete from cursor position to the end of the line.</p>
+                    <div class="example">
+                        # Press Esc to ensure you're in command mode<br>
+                        # Position cursor where you want to start deleting<br>
+                        # Press D<br>
+                        # This will delete from cursor to end of line
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>8. Dd delete line and p P paste</h3>
+                    <p>Commands to delete entire lines and paste them elsewhere.</p>
+                    <div class="example">
+                        # Press Esc to ensure you're in command mode<br>
+                        # Press dd to delete the current line<br>
+                        # Move cursor to where you want to paste<br>
+                        # Press p to paste below the current line<br>
+                        # Press P to paste above the current line<br><br>
+                        # Press 3dd to delete three lines at once
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>9. Practice</h3>
+                    <p>Common vi editing workflow example.</p>
+                    <div class="example">
+                        $ vim document.txt<br>
+                        # Navigate using h,j,k,l or arrow keys<br>
+                        # Press i to enter insert mode<br>
+                        # Type some text<br>
+                        # Press Esc to return to command mode<br>
+                        # Press :w to save<br>
+                        # Use dd to delete a line<br>
+                        # Press u to undo<br>
+                        # Press :wq to save and exit
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Introduction to Script Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Introduction to Script
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Hello world</h3>
+                    <p>Creating a simple "Hello World" bash script.</p>
+                    <div class="example">
+                        $ vim hello.sh<br><br>
+                        #!/bin/bash<br>
+                        echo "Hello, World!"<br><br>
+                        $ chmod +x hello.sh<br>
+                        $ ./hello.sh<br>
+                        Hello, World!
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Comment</h3>
+                    <p>Adding comments to bash scripts for documentation.</p>
+                    <div class="example">
+                        #!/bin/bash<br><br>
+                        # This is a comment<br>
+                        # Comments start with # and are ignored by the shell<br><br>
+                        echo "Hello, World!" # This is an inline comment
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Variables in a script</h3>
+                    <p>Defining and using variables in bash scripts.</p>
+                    <div class="example">
+                        #!/bin/bash<br><br>
+                        # Define variables<br>
+                        NAME="John"<br>
+                        AGE=30<br><br>
+                        # Use variables<br>
+                        echo "My name is $NAME and I am $AGE years old."<br><br>
+                        # Command output in variables<br>
+                        CURRENT_DIR=$(pwd)<br>
+                        echo "Current directory: $CURRENT_DIR"
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Sourcing input troubleshooting a script</h3>
+                    <p>Sourcing scripts and handling input for troubleshooting.</p>
+                    <div class="example">
+                        # Create a script with variables<br>
+                        $ vim config.sh<br>
+                        #!/bin/bash<br>
+                        DB_USER="admin"<br>
+                        DB_PASS="secret"<br><br>
+                        # Source the script in another script<br>
+                        $ vim app.sh<br>
+                        #!/bin/bash<br>
+                        source ./config.sh<br>
+                        echo "Connecting to database as $DB_USER"<br><br>
+                        # Debugging a script with -x option<br>
+                        $ bash -x app.sh<br>
+                        + source ./config.sh<br>
+                        ++ DB_USER=admin<br>
+                        ++ DB_PASS=secret<br>
+                        + echo 'Connecting to database as admin'<br>
+                        Connecting to database as admin
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. Practice</h3>
+                    <p>A complete example of a useful bash script.</p>
+                    <div class="example">
+                        #!/bin/bash<br><br>
+                        # Script to backup a directory<br><br>
+                        # Check if source directory is provided<br>
+                        if [ $# -lt 1 ]; then<br>
+                        &nbsp;&nbsp;echo "Usage: $0 &lt;source_directory&gt;"<br>
+                        &nbsp;&nbsp;exit 1<br>
+                        fi<br><br>
+                        # Variables<br>
+                        SOURCE_DIR=$1<br>
+                        BACKUP_DIR="/tmp/backup"<br>
+                        DATE=$(date +%Y%m%d_%H%M%S)<br>
+                        BACKUP_FILE="backup_$DATE.tar.gz"<br><br>
+                        # Create backup directory if it doesn't exist<br>
+                        mkdir -p $BACKUP_DIR<br><br>
+                        # Create the backup<br>
+                        echo "Creating backup of $SOURCE_DIR..."<br>
+                        tar -czf "$BACKUP_DIR/$BACKUP_FILE" "$SOURCE_DIR"<br><br>
+                        # Check if backup was successful<br>
+                        if [ $? -eq 0 ]; then<br>
+                        &nbsp;&nbsp;echo "Backup created successfully: $BACKUP_DIR/$BACKUP_FILE"<br>
+                        else<br>
+                        &nbsp;&nbsp;echo "Backup failed!"<br>
+                        fi
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h1>Linux System Management</h1>
+        
+        <!-- File Permissions Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                File Permissions
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. R (Read)</h3>
+                    <p>Permission to read a file or list directory contents.</p>
+                    <div class="example">
+                        $ ls -l file.txt<br>
+                        -r--r--r-- 1 user group 1024 May 10 10:30 file.txt<br>
+                        # The 'r' in positions 1, 4, and 7 indicates read permission for owner, group, and others
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. W (Write)</h3>
+                    <p>Permission to modify a file or create/delete files in a directory.</p>
+                    <div class="example">
+                        $ ls -l file.txt<br>
+                        --w------- 1 user group 1024 May 10 10:30 file.txt<br>
+                        # The 'w' in position 2 indicates write permission for the owner only
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. X (Execute)</h3>
+                    <p>Permission to execute a file or access a directory.</p>
+                    <div class="example">
+                        $ ls -l script.sh<br>
+                        ---x------ 1 user group 1024 May 10 10:30 script.sh<br>
+                        # The 'x' in position 3 indicates execute permission for the owner only
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Owner User (u)</h3>
+                    <p>The user who owns the file or directory.</p>
+                    <div class="example">
+                        $ ls -l file.txt<br>
+                        -rw-r--r-- 1 john users 1024 May 10 10:30 file.txt<br>
+                        # 'john' is the owner user of this file
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. Owner Group (g)</h3>
+                    <p>The group that owns the file or directory.</p>
+                    <div class="example">
+                        $ ls -l file.txt<br>
+                        -rw-r--r-- 1 john users 1024 May 10 10:30 file.txt<br>
+                        # 'users' is the owner group of this file
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. Other (o)</h3>
+                    <p>All other users who are not the owner or in the owner group.</p>
+                    <div class="example">
+                        $ ls -l file.txt<br>
+                        -rw-r----- 1 john users 1024 May 10 10:30 file.txt<br>
+                        # The last three characters '---' show that others have no permissions
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>7. All (a)</h3>
+                    <p>Refers to all three categories: owner, group, and others.</p>
+                    <div class="example">
+                        $ chmod a+x script.sh<br>
+                        # Gives execute permission to owner, group, and others<br>
+                        $ ls -l script.sh<br>
+                        -rwxr-xr-x 1 john users 1024 May 10 10:30 script.sh
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>8. chmod (Command)</h3>
+                    <p>Command to change file or directory permissions.</p>
+                    <div class="example">
+                        $ chmod u+x script.sh<br>
+                        # Adds execute permission for the owner<br><br>
+                        $ chmod g-w file.txt<br>
+                        # Removes write permission for the group<br><br>
+                        $ chmod o=r file.txt<br>
+                        # Sets other's permission to read-only<br><br>
+                        $ chmod u+rwx,g+rx,o-rwx secret.txt<br>
+                        # Multiple permission changes at once
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>9. chgrp (Command)</h3>
+                    <p>Command to change the group ownership of a file or directory.</p>
+                    <div class="example">
+                        $ chgrp developers project.txt<br>
+                        # Changes the group of project.txt to 'developers'<br><br>
+                        $ ls -l project.txt<br>
+                        -rw-r--r-- 1 john developers 1024 May 10 10:30 project.txt
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>10. chown (Command)</h3>
+                    <p>Command to change the user and/or group ownership of a file or directory.</p>
+                    <div class="example">
+                        $ chown alice file.txt<br>
+                        # Changes the owner to 'alice'<br><br>
+                        $ chown alice:developers file.txt<br>
+                        # Changes both owner to 'alice' and group to 'developers'<br><br>
+                        $ chown -R alice:developers ./project/<br>
+                        # Recursively changes ownership of a directory and its contents
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>11. Review Practice</h3>
+                    <p>Common file permission scenarios.</p>
+                    <div class="example">
+                        # Create a script and make it executable<br>
+                        $ touch script.sh<br>
+                        $ chmod u+x script.sh<br><br>
+                        # Create a shared directory for a group<br>
+                        $ mkdir /shared<br>
+                        $ chgrp developers /shared<br>
+                        $ chmod g+rwx /shared<br><br>
+                        # Secure a private file<br>
+                        $ touch private.key<br>
+                        $ chmod 600 private.key<br>
+                        # 600 = rw------- (only owner can read and write)
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- File Permission Octal Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                File Permission Octal
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Octal Number Ex: (000)(777)</h3>
+                    <p>Permissions can be represented as octal numbers, with three digits for user, group, and others.</p>
+                    <div class="example">
+                        $ chmod 755 script.sh<br>
+                        # 7 (rwx) for owner, 5 (r-x) for group, 5 (r-x) for others<br>
+                        $ ls -l script.sh<br>
+                        -rwxr-xr-x 1 john users 1024 May 10 10:30 script.sh
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. R=4</h3>
+                    <p>Read permission has a value of 4 in octal notation.</p>
+                    <div class="example">
+                        $ chmod 400 private.key<br>
+                        # 4 (r--) for owner, 0 (---) for group, 0 (---) for others<br>
+                        $ ls -l private.key<br>
+                        -r-------- 1 john users 1024 May 10 10:30 private.key
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. W=2</h3>
+                    <p>Write permission has a value of 2 in octal notation.</p>
+                    <div class="example">
+                        $ chmod 200 temp.txt<br>
+                        # 2 (-w-) for owner, 0 (---) for group, 0 (---) for others<br>
+                        $ ls -l temp.txt<br>
+                        --w------- 1 john users 1024 May 10 10:30 temp.txt
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. X=1</h3>
+                    <p>Execute permission has a value of 1 in octal notation.</p>
+                    <div class="example">
+                        $ chmod 100 script.sh<br>
+                        # 1 (--x) for owner, 0 (---) for group, 0 (---) for others<br>
+                        $ ls -l script.sh<br>
+                        ---x------ 1 john users 1024 May 10 10:30 script.sh
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. ---=0</h3>
+                    <p>No permissions has a value of 0 in octal notation.</p>
+                    <div class="example">
+                        $ chmod 000 locked.txt<br>
+                        # 0 (---) for owner, 0 (---) for group, 0 (---) for others<br>
+                        $ ls -l locked.txt<br>
+                        ---------- 1 john users 1024 May 10 10:30 locked.txt
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. Sharing Profile /etc/skel</h3>
+                    <p>Directory containing default files for new user accounts.</p>
+                    <div class="example">
+                        $ ls -la /etc/skel<br>
+                        total 20<br>
+                        drwxr-xr-x  2 root root 4096 Jan 10 12:34 .<br>
+                        drwxr-xr-x 98 root root 4096 May 15 09:12 ..<br>
+                        -rw-r--r--  1 root root  220 Jan  5 12:34 .bash_logout<br>
+                        -rw-r--r--  1 root root 3526 Jan  5 12:34 .bashrc<br>
+                        -rw-r--r--  1 root root  807 Jan  5 12:34 .profile<br><br>
+                        # Add a custom file to /etc/skel<br>
+                        $ sudo cp welcome.txt /etc/skel/<br>
+                        # Now all new users will get this file in their home directory
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>7. Understanding Umask</h3>
+                    <p>Default permission mask that is subtracted from the maximum permissions when creating new files and directories.</p>
+                    <div class="example">
+                        $ umask<br>
+                        0022<br><br>
+                        # With umask 022:<br>
+                        # New files: 666 - 022 = 644 (rw-r--r--)<br>
+                        # New directories: 777 - 022 = 755 (rwxr-xr-x)<br><br>
+                        # Change umask temporarily<br>
+                        $ umask 027<br>
+                        # Now new files will be 640 (rw-r-----) and directories 750 (rwxr-x---)<br><br>
+                        # Set permanent umask in ~/.bashrc<br>
+                        $ echo "umask 027" >> ~/.bashrc
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Advanced File Permissions Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Advanced File Permissions
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Set SGID</h3>
+                    <p>Set Group ID bit makes new files in a directory inherit the directory's group.</p>
+                    <div class="example">
+                        $ chmod g+s /shared<br>
+                        $ ls -ld /shared<br>
+                        drwxrwsr-x 2 root developers 4096 May 15 10:30 /shared<br>
+                        # Note the 's' in the group execute position<br><br>
+                        # Now all new files created in /shared will belong to the 'developers' group
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Set SUID</h3>
+                    <p>Set User ID bit makes a program run with the permissions of the file owner, not the user who runs it.</p>
+                    <div class="example">
+                        $ ls -l /usr/bin/passwd<br>
+                        -rwsr-xr-x 1 root root 59640 Mar 22 13:27 /usr/bin/passwd<br>
+                        # Note the 's' in the user execute position<br><br>
+                        # Set SUID on a file<br>
+                        $ chmod u+s myprogram<br>
+                        $ ls -l myprogram<br>
+                        -rwsr-xr-x 1 root root 12345 May 15 10:30 myprogram
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Sticky Bit</h3>
+                    <p>Sticky bit on a directory prevents users from deleting files they don't own.</p>
+                    <div class="example">
+                        $ ls -ld /tmp<br>
+                        drwxrwxrwt 15 root root 4096 May 15 11:45 /tmp<br>
+                        # Note the 't' in the others execute position<br><br>
+                        # Set sticky bit on a directory<br>
+                        $ chmod +t /shared<br>
+                        $ ls -ld /shared<br>
+                        drwxrwxrwt 2 root developers 4096 May 15 10:30 /shared
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Remove SGID</h3>
+                    <p>Remove the Set Group ID bit from a file or directory.</p>
+                    <div class="example">
+                        $ chmod g-s /shared<br>
+                        $ ls -ld /shared<br>
+                        drwxrwxr-x 2 root developers 4096 May 15 10:30 /shared<br>
+                        # The 's' in the group execute position is now gone
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. Remove SUID</h3>
+                    <p>Remove the Set User ID bit from a file.</p>
+                    <div class="example">
+                        $ chmod u-s myprogram<br>
+                        $ ls -l myprogram<br>
+                        -rwxr-xr-x 1 root root 12345 May 15 10:30 myprogram<br>
+                        # The 's' in the user execute position is now gone
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. Review</h3>
+                    <p>Special permissions in octal notation.</p>
+                    <div class="example">
+                        # SUID = 4000<br>
+                        # SGID = 2000<br>
+                        # Sticky bit = 1000<br><br>
+                        # Set all special permissions using octal notation<br>
+                        $ chmod 7755 directory<br>
+                        # 7 = 4 (SUID) + 2 (SGID) + 1 (Sticky bit)<br>
+                        # 755 = rwxr-xr-x<br><br>
+                        $ ls -ld directory<br>
+                        drwsr-sr-t 2 root root 4096 May 15 10:30 directory
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>7. Practice</h3>
+                    <p>Common scenarios for using special permissions.</p>
+                    <div class="example">
+                        # Create a shared directory for a team<br>
+                        $ mkdir /team-projects<br>
+                        $ chgrp developers /team-projects<br>
+                        $ chmod 2775 /team-projects<br>
+                        # 2 = SGID, 775 = rwxrwxr-x<br><br>
+                        # Create a public directory where users can share files but not delete others' files<br>
+                        $ mkdir /public-share<br>
+                        $ chmod 1777 /public-share<br>
+                        # 1 = Sticky bit, 777 = rwxrwxrwx
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- User Management Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                User Management
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Listing Users /etc/passwd</h3>
+                    <p>The /etc/passwd file contains user account information.</p>
+                    <div class="example">
+                        $ cat /etc/passwd<br>
+                        root:x:0:0:root:/root:/bin/bash<br>
+                        john:x:1000:1000:John Smith:/home/john:/bin/bash<br>
+                        alice:x:1001:1001:Alice Johnson:/home/alice:/bin/bash<br><br>
+                        # List only usernames<br>
+                        $ cut -d: -f1 /etc/passwd<br>
+                        root<br>
+                        john<br>
+                        alice
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Listing File Format /etc/passwd</h3>
+                    <p>Understanding the format of the /etc/passwd file.</p>
+                    <div class="example">
+                        # Format: username:password:UID:GID:comment:home_directory:shell<br><br>
+                        john:$6$abc...:18734:0:99999:7:::<br>
+                        # username: john<br>
+                        # password: $6$abc... (encrypted)<br>
+                        # lastchange: 18734 (days since Jan 1, 1970)<br>
+                        # min: 0 (minimum days between password changes)<br>
+                        # max: 99999 (maximum days until password change required)<br>
+                        # warn: 7 (days before password expires to warn user)<br>
+                        # inactive: (days after password expires until account is disabled)<br>
+                        # expire: (date when account expires)<br>
+                        # reserved: (reserved field)
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Delete User Command</h3>
+                    <p>Commands to delete user accounts.</p>
+                    <div class="example">
+                        # Delete a user<br>
+                        $ sudo userdel alice<br><br>
+                        # Delete a user and their home directory<br>
+                        $ sudo userdel -r bob<br><br>
+                        # Delete a user and their home directory and mail spool<br>
+                        $ sudo userdel -rf charlie
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Disable Users Command</h3>
+                    <p>Commands to disable user accounts without deleting them.</p>
+                    <div class="example">
+                        # Lock a user account<br>
+                        $ sudo passwd -l john<br>
+                        # This adds a '!' in front of the password hash in /etc/shadow<br><br>
+                        # Unlock a user account<br>
+                        $ sudo passwd -u john<br><br>
+                        # Change a user's shell to /sbin/nologin<br>
+                        $ sudo usermod -s /sbin/nologin alice<br>
+                        # This prevents login while keeping the account
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. Manage Users Profile</h3>
+                    <p>Managing user profile settings.</p>
+                    <div class="example">
+                        # Change a user's home directory<br>
+                        $ sudo usermod -d /newhome/john john<br><br>
+                        # Change a user's login shell<br>
+                        $ sudo usermod -s /bin/zsh john<br><br>
+                        # Change a user's comment/full name<br>
+                        $ sudo usermod -c "John A. Smith" john<br><br>
+                        # Add a user to additional groups<br>
+                        $ sudo usermod -aG sudo,developers john
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. Switch User Account</h3>
+                    <p>Commands to switch between user accounts.</p>
+                    <div class="example">
+                        # Switch to another user<br>
+                        $ su alice<br>
+                        Password: [enter alice's password]<br><br>
+                        # Switch to another user and use their environment<br>
+                        $ su - alice<br>
+                        Password: [enter alice's password]<br><br>
+                        # Switch to root (if sudo is configured)<br>
+                        $ sudo su -<br>
+                        [enter your password]
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>7. User ID Command</h3>
+                    <p>Commands to display user identity information.</p>
+                    <div class="example">
+                        # Show current user ID<br>
+                        $ id<br>
+                        uid=1000(john) gid=1000(john) groups=1000(john),4(adm),27(sudo),1001(developers)<br><br>
+                        # Show specific user ID<br>
+                        $ id alice<br>
+                        uid=1001(alice) gid=1001(alice) groups=1001(alice),1001(developers)<br><br>
+                        # Show only username<br>
+                        $ whoami<br>
+                        john
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>8. Review Practice</h3>
+                    <p>Common user management tasks.</p>
+                    <div class="example">
+                        # Create a new user<br>
+                        $ sudo useradd -m -s /bin/bash -c "David Brown" david<br><br>
+                        # Set password for the new user<br>
+                        $ sudo passwd david<br>
+                        Enter new UNIX password: [enter password]<br>
+                        Retype new UNIX password: [enter password again]<br><br>
+                        # Add user to sudo group<br>
+                        $ sudo usermod -aG sudo david<br><br>
+                        # Verify user settings<br>
+                        $ id david<br>
+                        $ grep david /etc/passwd
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- User Password Management Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                User Password Management
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. /etc/shadow</h3>
+                    <p>The /etc/shadow file contains encrypted password information.</p>
+                    <div class="example">
+                        $ sudo cat /etc/shadow<br>
+                        root:$6$xyz...:18734:0:99999:7:::<br>
+                        john:$6$abc...:18734:0:99999:7:::<br>
+                        alice:$6$def...:18734:0:99999:7:::
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. /etc/shadow- (Backup Password File)</h3>
+                    <p>Backup of the shadow file created when changes are made.</p>
+                    <div class="example">
+                        $ sudo ls -l /etc/shadow /etc/shadow-<br>
+                        -rw-r----- 1 root shadow 1643 May 15 10:30 /etc/shadow<br>
+                        -rw-r----- 1 root shadow 1621 May 10 09:15 /etc/shadow-
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Understanding Password File Format</h3>
+                    <p>The format of entries in the /etc/shadow file.</p>
+                    <div class="example">
+                        # Format: username:password:lastchange:min:max:warn:inactive:expire:reserved<br><br>
+                        john:$6$abc...:18734:0:99999:7:::<br>
+                        # username: john<br>
+                        # password: $6$abc... (encrypted)<br>
+                        # lastchange: 18734 (days since Jan 1, 1970)<br>
+                        # min: 0 (minimum days between password changes)<br>
+                        # max: 99999 (maximum days until password change required)<br>
+                        # warn: 7 (days before password expires to warn user)<br>
+                        # inactive: (days after password expires until account is disabled)<br>
+                        # expire: (date when account expires)<br>
+                        # reserved: (reserved field)
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Minimum Password Age (m)</h3>
+                    <p>Setting the minimum number of days between password changes.</p>
+                    <div class="example">
+                        # Set minimum password age to 2 days<br>
+                        $ sudo passwd -n 2 john<br><br>
+                        # Check the setting<br>
+                        $ sudo chage -l john<br>
+                        Minimum password age: 2 days
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. Maximum Password Age (M)</h3>
+                    <p>Setting the maximum number of days until password change is required.</p>
+                    <div class="example">
+                        # Set maximum password age to 90 days<br>
+                        $ sudo passwd -x 90 john<br><br>
+                        # Check the setting<br>
+                        $ sudo chage -l john<br>
+                        Maximum password age: 90 days
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. Password Expired</h3>
+                    <p>Force a password to expire, requiring the user to change it at next login.</p>
+                    <div class="example">
+                        # Force password expiration<br>
+                        $ sudo passwd -e john<br>
+                        passwd: password expiry information changed.<br><br>
+                        # Check expiration status<br>
+                        $ sudo chage -l john<br>
+                        Last password change: password must be changed
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>7. Account Expired</h3>
+                    <p>Set an expiration date for an account.</p>
+                    <div class="example">
+                        # Set account to expire on December 31, 2023<br>
+                        $ sudo usermod -e 2023-12-31 john<br><br>
+                        # Check expiration date<br>
+                        $ sudo chage -l john<br>
+                        Account expires: Dec 31, 2023
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>8. chage Command</h3>
+                    <p>Command to change user password expiry information.</p>
+                    <div class="example">
+                        # View current settings<br>
+                        $ sudo chage -l john<br><br>
+                        # Set minimum password age<br>
+                        $ sudo chage -m 2 john<br><br>
+                        # Set maximum password age<br>
+                        $ sudo chage -M 90 john<br><br>
+                        # Set password expiration warning<br>
+                        $ sudo chage -W 7 john<br><br>
+                        # Set account expiration date<br>
+                        $ sudo chage -E 2023-12-31 john<br><br>
+                        # Force password change on next login<br>
+                        $ sudo chage -d 0 john
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>9. Edit File /etc/shadow</h3>
+                    <p>Directly editing the shadow file (use with caution).</p>
+                    <div class="example">
+                        # Make a backup first<br>
+                        $ sudo cp /etc/shadow /etc/shadow.bak<br><br>
+                        # Edit the file<br>
+                        $ sudo vipw -s<br>
+                        # This opens the shadow file in a safe way<br><br>
+                        # Alternative (less safe)<br>
+                        $ sudo vi /etc/shadow
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Process Management Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Process Management
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. ps</h3>
+                    <p>Display process status with CPU and memory usage.</p>
+                    <div class="example">
+                        # Show CPU and memory usage for all processes<br>
+                        $ ps aux<br>
+                        USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND<br>
+                        root         1  0.0  0.1 225868  9128 ?        Ss   May15   0:01 /sbin/init<br>
+                        john      1234  2.0  0.4 325472 65536 ?        Sl   12:00   0:01 firefox<br><br>
+                        # Show process tree<br>
+                        $ ps axjf<br>
+                        # Show processes for a specific user<br>
+                        $ ps -u john<br>
+                        # Show processes by CPU usage<br>
+                        $ ps aux --sort=-%cpu
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. glances</h3>
+                    <p>Advanced system monitoring tool with a curses interface.</p>
+                    <div class="example">
+                        $ glances<br>
+                        # Displays CPU, memory, disk I/O, network, and process information<br>
+                        # in a single dashboard<br><br>
+                        # Install glances if not available<br>
+                        $ sudo apt install glances   # Debian/Ubuntu<br>
+                        $ sudo dnf install glances   # Fedora/RHEL
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. mpstat</h3>
+                    <p>Display CPU utilization statistics.</p>
+                    <div class="example">
+                        # Show CPU statistics for all CPUs<br>
+                        $ mpstat<br>
+                        Linux 5.15.0-76-generic (hostname)    05/15/2023    _x86_64_    (8 CPU)<br><br>
+                        12:34:56 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest   %idle<br>
+                        12:34:56 PM  all    2.00    0.00    1.00    0.00    0.00    0.10    0.00    0.00   96.90<br><br>
+                        # Show statistics for each CPU<br>
+                        $ mpstat -P ALL<br>
+                        # Update every 2 seconds, 5 times<br>
+                        $ mpstat 2 5
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Package Management Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Package Management
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Repository</h3>
+                    <p>Software repositories and their configuration files.</p>
+                    <div class="example">
+                        # Repository configuration files for different distributions<br><br>
+                        # Debian/Ubuntu<br>
+                        $ cat /etc/apt/sources.list<br>
+                        deb http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse<br>
+                        deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse<br><br>
+                        # Fedora/RHEL/CentOS<br>
+                        $ cat /etc/yum.repos.d/fedora.repo<br>
+                        [fedora]<br>
+                        name=Fedora $releasever - $basearch<br>
+                        baseurl=http://download.fedoraproject.org/pub/fedora/linux/releases/$releasever/Everything/$basearch/os/<br>
+                        enabled=1<br>
+                        gpgcheck=1<br>
+                        gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Online Install - DNF Tool</h3>
+                    <p>Package management with DNF (Fedora, RHEL 8+, CentOS 8+).</p>
+                    <div class="example">
+                        # Search for a package<br>
+                        $ dnf search nginx<br><br>
+                        # Get information about a package<br>
+                        $ dnf info nginx<br><br>
+                        # Install a package<br>
+                        $ sudo dnf install nginx<br><br>
+                        # Update all packages<br>
+                        $ sudo dnf update<br><br>
+                        # Remove a package<br>
+                        $ sudo dnf remove nginx<br><br>
+                        # List installed packages<br>
+                        $ dnf list installed<br><br>
+                        # List available groups<br>
+                        $ dnf group list
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Online Install - YUM Tool</h3>
+                    <p>Package management with YUM (older RHEL/CentOS versions).</p>
+                    <div class="example">
+                        # Search for a package<br>
+                        $ yum search httpd<br><br>
+                        # Get information about a package<br>
+                        $ yum info httpd<br><br>
+                        # Install a package<br>
+                        $ sudo yum install httpd<br><br>
+                        # Update all packages<br>
+                        $ sudo yum update<br><br>
+                        # Remove a package<br>
+                        $ sudo yum remove httpd<br><br>
+                        # List installed packages<br>
+                        $ yum list installed<br><br>
+                        # Clean YUM cache<br>
+                        $ sudo yum clean all
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Download</h3>
+                    <p>Downloading packages without installing them.</p>
+                    <div class="example">
+                        # Debian/Ubuntu - download only<br>
+                        $ apt-get download nginx<br><br>
+                        # Fedora/RHEL - download only<br>
+                        $ dnf download nginx<br><br>
+                        # Download RPM from a URL<br>
+                        $ wget https://example.com/path/to/package.rpm<br><br>
+                        # Download DEB from a URL<br>
+                        $ wget https://example.com/path/to/package.deb
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. Edit</h3>
+                    <p>Editing repository configuration files.</p>
+                    <div class="example">
+                        # Edit APT sources list<br>
+                        $ sudo vi /etc/apt/sources.list<br><br>
+                        # Add a new repository file for YUM/DNF<br>
+                        $ sudo vi /etc/yum.repos.d/custom.repo<br>
+                        [custom]<br>
+                        name=Custom Repository<br>
+                        baseurl=http://repo.example.com/custom<br>
+                        enabled=1<br>
+                        gpgcheck=0<br><br>
+                        # Update package lists after editing<br>
+                        $ sudo apt update      # Debian/Ubuntu<br>
+                        $ sudo dnf makecache   # Fedora/RHEL
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. Offline Install - Check File Already Installed</h3>
+                    <p>Checking if a package is already installed.</p>
+                    <div class="example">
+                        # Debian/Ubuntu<br>
+                        $ dpkg -l | grep nginx<br><br>
+                        # Fedora/RHEL/CentOS<br>
+                        $ rpm -qa | grep httpd
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>7. rpm -qa | grep &lt;package_name&gt;</h3>
+                    <p>Query all installed packages and filter by name.</p>
+                    <div class="example">
+                        $ rpm -qa | grep kernel<br>
+                        kernel-5.14.0-284.30.1.el9_2.x86_64<br>
+                        kernel-core-5.14.0-284.30.1.el9_2.x86_64<br>
+                        kernel-modules-5.14.0-284.30.1.el9_2.x86_64<br><br>
+                        # Check version of an installed package<br>
+                        $ rpm -q nginx<br>
+                        nginx-1.20.1-13.el9.x86_64
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>8. rpm -ivh &lt;package_name&gt;</h3>
+                    <p>Install an RPM package file with verbose output and hash marks.</p>
+                    <div class="example">
+                        $ sudo rpm -ivh nginx-1.20.1-13.el9.x86_64.rpm<br>
+                        Preparing...                          ################################# [100%]<br>
+                        Updating / installing...<br>
+                           1:nginx-1:1.20.1-13.el9            ################################# [100%]<br><br>
+                        # Install and upgrade if already installed<br>
+                        $ sudo rpm -Uvh nginx-1.20.1-13.el9.x86_64.rpm<br><br>
+                        # Install without dependencies<br>
+                        $ sudo rpm -ivh --nodeps nginx-1.20.1-13.el9.x86_64.rpm
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>9. rpm -e (Remove Package)</h3>
+                    <p>Remove an installed RPM package.</p>
+                    <div class="example">
+                        # Remove a package<br>
+                        $ sudo rpm -e nginx<br><br>
+                        # Remove a package without checking dependencies<br>
+                        $ sudo rpm -e --nodeps nginx<br><br>
+                        # Remove a package but keep configuration files<br>
+                        $ sudo rpm -e --noscripts nginx
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>10. Check Service Name</h3>
+                    <p>Finding the service name associated with a package.</p>
+                    <div class="example">
+                        # List files in a package to find service files<br>
+                        $ rpm -ql nginx | grep service<br>
+                        /usr/lib/systemd/system/nginx.service<br><br>
+                        # Check if a service is running<br>
+                        $ systemctl status nginx<br><br>
+                        # For Debian/Ubuntu<br>
+                        $ dpkg -L nginx | grep service
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>11. Edit File</h3>
+                    <p>Editing configuration files for installed packages.</p>
+                    <div class="example">
+                        # Edit nginx configuration<br>
+                        $ sudo vi /etc/nginx/nginx.conf<br><br>
+                        # Edit Apache configuration<br>
+                        $ sudo vi /etc/httpd/conf/httpd.conf<br><br>
+                        # Find configuration files for a package<br>
+                        $ rpm -qc nginx<br>
+                        /etc/logrotate.d/nginx<br>
+                        /etc/nginx/fastcgi.conf<br>
+                        /etc/nginx/nginx.conf<br>
+                        ...<br><br>
+                        # For Debian/Ubuntu<br>
+                        $ dpkg -L nginx | grep etc
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>12. Package Name, Service Name, Directory Binary File</h3>
+                    <p>Understanding the relationship between packages, services, and binaries.</p>
+                    <div class="example">
+                        # Find package name for a command<br>
+                        $ which nginx<br>
+                        /usr/sbin/nginx<br>
+                        $ rpm -qf /usr/sbin/nginx<br>
+                        nginx-1.20.1-13.el9.x86_64<br><br>
+                        # Find service name<br>
+                        $ systemctl list-unit-files | grep nginx<br>
+                        nginx.service                             enabled<br><br>
+                        # Find binary location<br>
+                        $ whereis nginx<br>
+                        nginx: /usr/sbin/nginx /usr/lib64/nginx /etc/nginx /usr/share/nginx<br><br>
+                        # Start, stop, restart service<br>
+                        $ sudo systemctl start nginx<br>
+                        $ sudo systemctl stop nginx<br>
+                        $ sudo systemctl restart nginx
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h1>Linux Storage</h1>
+        
+        <!-- Introduction Linux Storage Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Introduction Linux Storage
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Hard Disk</h3>
+                    <p>Physical storage devices in Linux systems.</p>
+                    <div class="example">
+                        # List all disk devices<br>
+                        $ lsblk<br>
+                        NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT<br>
+                        sda      8:0    0  500G  0 disk<br>
+                        ├─sda1   8:1    0  500M  0 part /boot<br>
+                        ├─sda2   8:2    0   50G  0 part /<br>
+                        └─sda3   8:3    0 449.5G  0 part /home<br>
+                        sdb      8:16   0  1.8T  0 disk<br>
+                        └─sdb1   8:17   0  1.8T  0 part /data<br><br>
+                        # Show disk usage<br>
+                        $ df -h<br>
+                        Filesystem      Size  Used Avail Use% Mounted on<br>
+                        /dev/sda2        50G   15G   35G  30% /<br>
+                        /dev/sda1       500M  128M  372M  26% /boot<br>
+                        /dev/sda3       450G  200G  250G  44% /home<br>
+                        /dev/sdb1       1.8T  1.2T  600G  67% /data
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Block Device</h3>
+                    <p>Storage devices that transfer data in blocks, like hard drives and SSDs.</p>
+                    <div class="example">
+                        # List block devices<br>
+                        $ lsblk<br><br>
+                        # Show detailed information about block devices<br>
+                        $ sudo blkid<br>
+                        /dev/sda1: UUID="a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890" TYPE="ext4" PARTUUID="12345678-01"<br>
+                        /dev/sda2: UUID="b2c3d4e5-f6a1-2345-b2c3-d4e5f6a12345" TYPE="ext4" PARTUUID="12345678-02"<br><br>
+                        # Show block device attributes<br>
+                        $ sudo lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT<br>
+                        NAME   SIZE FSTYPE TYPE MOUNTPOINT<br>
+                        sda    500G        disk<br>
+                        ├─sda1 500M ext4   part /boot<br>
+                        ├─sda2  50G ext4   part /<br>
+                        └─sda3 449.5G ext4   part /home
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. /dev/sd*</h3>
+                    <p>Device files for SCSI and SATA disk drives.</p>
+                    <div class="example">
+                        # Naming convention:<br>
+                        # /dev/sda - First disk<br>
+                        # /dev/sdb - Second disk<br>
+                        # /dev/sda1 - First partition on first disk<br><br>
+                        # List all SCSI/SATA devices<br>
+                        $ ls -l /dev/sd*<br>
+                        brw-rw---- 1 root disk 8, 0 May 15 10:00 /dev/sda<br>
+                        brw-rw---- 1 root disk 8, 1 May 15 10:00 /dev/sda1<br>
+                        brw-rw---- 1 root disk 8, 2 May 15 10:00 /dev/sda2<br>
+                        brw-rw---- 1 root disk 8, 3 May 15 10:00 /dev/sda3<br>
+                        brw-rw---- 1 root disk 8, 16 May 15 10:00 /dev/sdb<br>
+                        brw-rw---- 1 root disk 8, 17 May 15 10:00 /dev/sdb1
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. fdisk -l</h3>
+                    <p>List partition tables for all disks.</p>
+                    <div class="example">
+                        $ sudo fdisk -l<br>
+                        Disk /dev/sda: 500 GiB, 536870912000 bytes, 1048576000 sectors<br>
+                        Units: sectors of 1 * 512 = 512 bytes<br>
+                        Sector size (logical/physical): 512 bytes / 4096 bytes<br>
+                        I/O size (minimum/optimal): 4096 bytes / 4096 bytes<br>
+                        Disklabel type: gpt<br>
+                        Disk identifier: 12345678-abcd-1234-efgh-123456789abc<br><br>
+                        Device       Start        End    Sectors   Size Type<br>
+                        /dev/sda1     2048    1026047    1024000   500M EFI System<br>
+                        /dev/sda2  1026048  105906175  104880128    50G Linux filesystem<br>
+                        /dev/sda3 105906176 1048575999  942669824 449.5G Linux filesystem
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. dmesg</h3>
+                    <p>Display kernel messages, including disk detection.</p>
+                    <div class="example">
+                        # Show all kernel messages<br>
+                        $ dmesg<br><br>
+                        # Filter for disk-related messages<br>
+                        $ dmesg | grep -i sd<br>
+                        [    1.234567] sd 0:0:0:0: [sda] 1048576000 512-byte logical blocks: (536 GB/500 GiB)<br>
+                        [    1.234568] sd 0:0:0:0: [sda] 4096-byte physical blocks<br>
+                        [    1.234569] sd 0:0:0:0: [sda] Write Protect is off<br>
+                        [    1.234570] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00<br>
+                        [    1.234571] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA<br>
+                        [    1.234572] sd 0:0:0:0: Attached scsi generic sg0 type 0<br>
+                        [    1.234573]  sda: sda1 sda2 sda3<br>
+                        [    1.234574] sd 0:0:0:0: [sda] Attached SCSI disk
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. Practice</h3>
+                    <p>Common disk management tasks.</p>
+                    <div class="example">
+                        # Check disk space usage<br>
+                        $ df -h<br><br>
+                        # Check disk usage by directory<br>
+                        $ du -sh /home/*<br>
+                        120G    /home/john<br>
+                        80G     /home/alice<br><br>
+                        # Create a new partition (interactive)<br>
+                        $ sudo fdisk /dev/sdb<br>
+                        # Follow prompts to create a new partition<br><br>
+                        # Format a partition<br>
+                        $ sudo mkfs.ext4 /dev/sdb1<br><br>
+                        # Mount a partition<br>
+                        $ sudo mkdir /mnt/data<br>
+                        $ sudo mount /dev/sdb1 /mnt/data<br><br>
+                        # Add to fstab for persistent mounting<br>
+                        $ sudo vi /etc/fstab<br>
+                        # Add line: UUID=a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890 /mnt/data ext4 defaults 0 2
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1>Linux Network Management</h1>
+        
+        <!-- Introduction to Network Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Introduction to Network
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. TCP/IP</h3>
+                    <p>The fundamental communication protocol suite for the Internet.</p>
+                    <div class="example">
+                        # TCP/IP stands for Transmission Control Protocol/Internet Protocol<br>
+                        # It's a set of protocols that enable communication between devices on a network<br><br>
+                        # Check TCP connections<br>
+                        $ ss -t<br>
+                        State   Recv-Q  Send-Q  Local Address:Port   Peer Address:Port<br>
+                        ESTAB   0       0       192.168.1.10:ssh     192.168.1.5:52410
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Layers/Protocols</h3>
+                    <p>The different layers of the TCP/IP model and their protocols.</p>
+                    <div class="example">
+                        # TCP/IP Layers:<br>
+                        # 1. Application Layer: HTTP, FTP, SSH, SMTP, DNS<br>
+                        # 2. Transport Layer: TCP, UDP<br>
+                        # 3. Internet Layer: IP, ICMP, ARP<br>
+                        # 4. Link Layer: Ethernet, Wi-Fi<br><br>
+                        # Check which protocols are in use<br>
+                        $ netstat -s<br>
+                        # Shows statistics for various protocols
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. IP Address</h3>
+                    <p>Unique identifier for devices on a network.</p>
+                    <div class="example">
+                        # Show IP addresses for all interfaces<br>
+                        $ ip addr show<br>
+                        1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;inet 127.0.0.1/8 scope host lo<br>
+                        2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;inet 192.168.1.10/24 brd 192.168.1.255 scope global eth0<br><br>
+                        # Check external IP address<br>
+                        $ curl ifconfig.me
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. MAC Address</h3>
+                    <p>Physical address of a network interface.</p>
+                    <div class="example">
+                        # Show MAC addresses for all interfaces<br>
+                        $ ip link show<br>
+                        1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>
+                        2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP mode DEFAULT<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;link/ether 00:1a:2b:3c:4d:5e brd ff:ff:ff:ff:ff:ff
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. TCP/UDP</h3>
+                    <p>Transport layer protocols with different characteristics.</p>
+                    <div class="example">
+                        # TCP (Transmission Control Protocol)<br>
+                        # - Connection-oriented<br>
+                        # - Reliable delivery<br>
+                        # - Flow control<br><br>
+                        # UDP (User Datagram Protocol)<br>
+                        # - Connectionless<br>
+                        # - No guaranteed delivery<br>
+                        # - Faster than TCP<br><br>
+                        # List TCP connections<br>
+                        $ ss -t<br>
+                        # List UDP connections<br>
+                        $ ss -u
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. Port</h3>
+                    <p>Endpoint for communication in an operating system.</p>
+                    <div class="example">
+                        # Common ports:<br>
+                        # 22 - SSH<br>
+                        # 80 - HTTP<br>
+                        # 443 - HTTPS<br>
+                        # 25 - SMTP<br>
+                        # 53 - DNS<br><br>
+                        # List all listening ports<br>
+                        $ ss -tuln<br>
+                        Netid  State   Recv-Q  Send-Q  Local Address:Port  Peer Address:Port<br>
+                        tcp    LISTEN  0       128     0.0.0.0:22          0.0.0.0:*<br>
+                        tcp    LISTEN  0       128     127.0.0.1:631       0.0.0.0:*<br>
+                        udp    UNCONN  0       0       127.0.0.1:53        0.0.0.0:*
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>7. TCP/IP Device</h3>
+                    <p>Network interfaces in a Linux system.</p>
+                    <div class="example">
+                        # List network interfaces<br>
+                        $ ip link<br>
+                        1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT<br>
+                        2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP mode DEFAULT<br>
+                        3: wlan0: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN mode DEFAULT<br><br>
+                        # Common interface names:<br>
+                        # lo - Loopback interface<br>
+                        # eth0, eth1 - Ethernet interfaces<br>
+                        # wlan0 - Wireless interface<br>
+                        # enp0s3 - Modern naming for Ethernet (Predictable Network Interface Names)
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>8. Unicast - Broadcast</h3>
+                    <p>Different types of network communication.</p>
+                    <div class="example">
+                        # Unicast: One-to-one communication<br>
+                        # Broadcast: One-to-all communication<br>
+                        # Multicast: One-to-many communication<br><br>
+                        # Broadcast address for a network<br>
+                        $ ip addr show eth0 | grep brd<br>
+                        inet 192.168.1.10/24 brd 192.168.1.255 scope global eth0<br><br>
+                        # Send a ping to broadcast address<br>
+                        $ ping -b 192.168.1.255
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>9. LAN-WAN</h3>
+                    <p>Local Area Network and Wide Area Network concepts.</p>
+                    <div class="example">
+                        # LAN (Local Area Network)<br>
+                        # - Limited geographical area (home, office)<br>
+                        # - Typically uses private IP addresses (192.168.x.x, 10.x.x.x, 172.16-31.x.x)<br><br>
+                        # WAN (Wide Area Network)<br>
+                        # - Spans large geographical areas<br>
+                        # - Connects multiple LANs<br>
+                        # - Uses public IP addresses<br><br>
+                        # Check routing to see WAN connection<br>
+                        $ ip route show<br>
+                        default via 192.168.1.1 dev eth0 proto static<br>
+                        192.168.1.0/24 dev eth0 proto kernel scope link src 192.168.1.10
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>10. Reviews</h3>
+                    <p>Summary of network concepts.</p>
+                    <div class="example">
+                        # TCP/IP: Protocol suite for network communication<br>
+                        # IP Address: Logical address for a device on a network<br>
+                        # MAC Address: Physical address of a network interface<br>
+                        # Port: Endpoint for communication in an OS<br>
+                        # LAN: Local network with private IP addresses<br>
+                        # WAN: Wide network connecting multiple LANs<br><br>
+                        # Check all network information at once<br>
+                        $ ip addr<br>
+                        $ ip route<br>
+                        $ ss -tuln
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>11. Practice</h3>
+                    <p>Practical network commands and tasks.</p>
+                    <div class="example">
+                        # Check your IP configuration<br>
+                        $ ip addr show<br><br>
+                        # Test connectivity to a host<br>
+                        $ ping google.com<br><br>
+                        # Trace the route to a host<br>
+                        $ traceroute google.com<br><br>
+                        # Check DNS resolution<br>
+                        $ nslookup google.com<br><br>
+                        # Check open ports on your system<br>
+                        $ ss -tuln<br><br>
+                        # Check network statistics<br>
+                        $ netstat -i
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Manage TCP/IP Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Manage TCP/IP
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Network Adapters</h3>
+                    <p>Managing network interface cards (NICs).</p>
+                    <div class="example">
+                        # List all network adapters<br>
+                        $ ip link show<br><br>
+                        # Enable a network adapter<br>
+                        $ sudo ip link set eth0 up<br><br>
+                        # Disable a network adapter<br>
+                        $ sudo ip link set eth0 down<br><br>
+                        # Show detailed information about adapters<br>
+                        $ ethtool eth0
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. ip a</h3>
+                    <p>Display IP addresses and network interfaces.</p>
+                    <div class="example">
+                        $ ip a<br>
+                        1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;inet 127.0.0.1/8 scope host lo<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever<br>
+                        2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;link/ether 00:1a:2b:3c:4d:5e brd ff:ff:ff:ff:ff:ff<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;inet 192.168.1.10/24 brd 192.168.1.255 scope global eth0<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. ip n</h3>
+                    <p>Display neighbor table (ARP cache).</p>
+                    <div class="example">
+                        $ ip n<br>
+                        192.168.1.1 dev eth0 lladdr 00:11:22:33:44:55 REACHABLE<br>
+                        192.168.1.5 dev eth0 lladdr aa:bb:cc:dd:ee:ff STALE
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. ip r</h3>
+                    <p>Display routing table.</p>
+                    <div class="example">
+                        $ ip r<br>
+                        default via 192.168.1.1 dev eth0 proto static<br>
+                        192.168.1.0/24 dev eth0 proto kernel scope link src 192.168.1.10
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. /etc/network/interfaces</h3>
+                    <p>Network configuration file (Debian/Ubuntu).</p>
+                    <div class="example">
+                        $ cat /etc/network/interfaces<br>
+                        # The loopback network interface<br>
+                        auto lo<br>
+                        iface lo inet loopback<br><br>
+                        # The primary network interface<br>
+                        auto eth0<br>
+                        iface eth0 inet static<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;address 192.168.1.10<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;netmask 255.255.255.0<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;gateway 192.168.1.1<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;dns-nameservers 8.8.8.8 8.8.4.4
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. ping</h3>
+                    <p>Test connectivity to a host.</p>
+                    <div class="example">
+                        # Basic ping<br>
+                        $ ping google.com<br>
+                        PING google.com (142.250.190.78) 56(84) bytes of data.<br>
+                        64 bytes from lga25s71-in-f14.1e100.net (142.250.190.78): icmp_seq=1 ttl=116 time=10.5 ms<br>
+                        64 bytes from lga25s71-in-f14.1e100.net (142.250.190.78): icmp_seq=2 ttl=116 time=10.7 ms<br><br>
+                        # Ping with specific count<br>
+                        $ ping -c 4 google.com<br><br>
+                        # Ping with specific interval<br>
+                        $ ping -i 2 google.com
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>7. Add IP Address</h3>
+                    <p>Assign an IP address to a network interface.</p>
+                    <div class="example">
+                        # Add an IP address<br>
+                        $ sudo ip addr add 192.168.1.20/24 dev eth0<br><br>
+                        # Add a secondary IP address<br>
+                        $ sudo ip addr add 192.168.1.21/24 dev eth0 secondary<br><br>
+                        # Delete an IP address<br>
+                        $ sudo ip addr del 192.168.1.20/24 dev eth0
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>8. DHCP Clients</h3>
+                    <p>Obtain IP address automatically from a DHCP server.</p>
+                    <div class="example">
+                        # Configure interface for DHCP in /etc/network/interfaces<br>
+                        auto eth0<br>
+                        iface eth0 inet dhcp<br><br>
+                        # Request IP address using dhclient<br>
+                        $ sudo dhclient eth0<br><br>
+                        # Release IP address<br>
+                        $ sudo dhclient -r eth0<br><br>
+                        # Renew IP address<br>
+                        $ sudo dhclient eth0
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>9. traceroute</h3>
+                    <p>Trace the route packets take to a network host.</p>
+                    <div class="example">
+                        $ traceroute google.com<br>
+                        traceroute to google.com (142.250.190.78), 30 hops max, 60 byte packets<br>
+                        1  _gateway (192.168.1.1)  0.345 ms  0.319 ms  0.309 ms<br>
+                        2  192.168.100.1 (192.168.100.1)  10.308 ms  10.287 ms  10.270 ms<br>
+                        3  * * *<br>
+                        4  * * *<br>
+                        5  108.170.252.1 (108.170.252.1)  12.132 ms 108.170.252.33 (108.170.252.33)  12.099 ms 108.170.252.1 (108.170.252.1)  12.083 ms<br>
+                        6  142.250.190.78 (142.250.190.78)  10.489 ms  10.471 ms  10.453 ms
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>10. ssh</h3>
+                    <p>Secure Shell for remote login.</p>
+                    <div class="example">
+                        # Connect to a remote server<br>
+                        $ ssh username@remote_host<br><br>
+                        # Connect with a specific port<br>
+                        $ ssh -p 2222 username@remote_host<br><br>
+                        # Connect with a specific identity file<br>
+                        $ ssh -i ~/.ssh/id_rsa username@remote_host<br><br>
+                        # Execute a command on a remote server<br>
+                        $ ssh username@remote_host "ls -la"
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>11. telnet</h3>
+                    <p>Telnet protocol for remote login (insecure).</p>
+                    <div class="example">
+                        # Connect to a remote server<br>
+                        $ telnet remote_host<br><br>
+                        # Connect to a specific port<br>
+                        $ telnet remote_host 80<br><br>
+                        # Test if a port is open<br>
+                        $ telnet google.com 80<br>
+                        Trying 142.250.190.78...<br>
+                        Connected to google.com.<br>
+                        Escape character is '^]'.
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>12. review</h3>
+                    <p>Summary of TCP/IP management commands.</p>
+                    <div class="example">
+                        # Display network interfaces<br>
+                        $ ip link<br><br>
+                        # Display IP addresses<br>
+                        $ ip addr<br><br>
+                        # Display routing table<br>
+                        $ ip route<br><br>
+                        # Display ARP cache<br>
+                        $ ip neigh<br><br>
+                        # Test connectivity<br>
+                        $ ping host<br><br>
+                        # Trace route<br>
+                        $ traceroute host
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>13-14. practice</h3>
+                    <p>Practical TCP/IP management tasks.</p>
+                    <div class="example">
+                        # Configure a static IP address<br>
+                        $ sudo ip addr add 192.168.1.10/24 dev eth0<br>
+                        $ sudo ip route add default via 192.168.1.1<br><br>
+                        # Configure DNS<br>
+                        $ sudo vi /etc/resolv.conf<br>
+                        nameserver 8.8.8.8<br>
+                        nameserver 8.8.4.4<br><br>
+                        # Test network configuration<br>
+                        $ ping -c 4 google.com<br>
+                        $ traceroute google.com<br>
+                        $ ssh username@remote_host
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Network Monitor Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Network Monitor
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Network Monitor</h3>
+                    <p>Introduction to network monitoring tools.</p>
+                    <div class="example">
+                        # Network monitoring helps to:<br>
+                        # - Identify network issues<br>
+                        # - Monitor bandwidth usage<br>
+                        # - Detect unauthorized access<br>
+                        # - Analyze network performance<br><br>
+                        # Common Linux network monitoring tools:<br>
+                        # - netstat/ss: Connection information<br>
+                        # - iftop: Bandwidth usage by connection<br>
+                        # - nmap: Network discovery and security auditing<br>
+                        # - tcpdump: Packet analyzer<br>
+                        # - wireshark: Graphical packet analyzer
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. netstat/ss</h3>
+                    <p>Display network connections, routing tables, and interface statistics.</p>
+                    <div class="example">
+                        # netstat is deprecated, ss is the modern replacement<br><br>
+                        # Show all connections<br>
+                        $ ss<br><br>
+                        # Show listening TCP ports<br>
+                        $ ss -lt<br>
+                        State   Recv-Q  Send-Q  Local Address:Port  Peer Address:Port<br>
+                        LISTEN  0       128     0.0.0.0:ssh         0.0.0.0:*<br>
+                        LISTEN  0       128     127.0.0.1:smtp      0.0.0.0:*<br><br>
+                        # Show listening UDP ports<br>
+                        $ ss -lu<br><br>
+                        # Show all TCP connections with process names<br>
+                        $ ss -tp<br><br>
+                        # Show statistics<br>
+                        $ ss -s<br>
+                        Total: 321<br>
+                        TCP:   14 (estab 5, closed 0, orphaned 0, timewait 0)<br>
+                        Transport Total     IP        IPv6<br>
+                        RAW       0         0         0<br>
+                        UDP       7         4         3<br>
+                        TCP       14        9         5<br>
+                        INET      21        13        8<br>
+                        FRAG      0         0         0
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. ntop</h3>
+                    <p>Network traffic probe that shows network usage in a web interface.</p>
+                    <div class="example">
+                        # Install ntopng (modern version of ntop)<br>
+                        $ sudo apt install ntopng   # Debian/Ubuntu<br>
+                        $ sudo dnf install ntopng   # Fedora/RHEL<br><br>
+                        # Start ntopng service<br>
+                        $ sudo systemctl start ntopng<br><br>
+                        # Access web interface<br>
+                        # Open browser and navigate to http://localhost:3000<br><br>
+                        # Features:<br>
+                        # - Real-time network traffic monitoring<br>
+                        # - Host and application monitoring<br>
+                        # - Traffic statistics and graphs<br>
+                        # - Protocol distribution
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Sniffing the Network</h3>
+                    <p>Capturing and analyzing network packets.</p>
+                    <div class="example">
+                        # Using tcpdump to capture packets<br>
+                        $ sudo tcpdump -i eth0<br>
+                        tcpdump: verbose output suppressed, use -v for full protocol decode<br>
+                        listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes<br>
+                        12:34:56.789012 IP 192.168.1.10.ssh > 192.168.1.5.52410: Flags [P.], seq 123456:123520, ack 7890, win 501, options [nop,nop,TS val 1234567 ecr 7654321], length 64<br><br>
+                        # Capture packets for a specific host<br>
+                        $ sudo tcpdump -i eth0 host 192.168.1.5<br><br>
+                        # Capture packets for a specific port<br>
+                        $ sudo tcpdump -i eth0 port 80<br><br>
+                        # Save capture to a file<br>
+                        $ sudo tcpdump -i eth0 -w capture.pcap<br><br>
+                        # Read capture from a file<br>
+                        $ tcpdump -r capture.pcap
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. iftop</h3>
+                    <p>Display bandwidth usage on an interface by host.</p>
+                    <div class="example">
+                        # Install iftop<br>
+                        $ sudo apt install iftop   # Debian/Ubuntu<br>
+                        $ sudo dnf install iftop   # Fedora/RHEL<br><br>
+                        # Monitor bandwidth on eth0<br>
+                        $ sudo iftop -i eth0<br><br>
+                        # Output shows:<br>
+                        # - Source and destination hosts<br>
+                        # - Current bandwidth usage<br>
+                        # - Cumulative bandwidth usage<br>
+                        # - Peak bandwidth usage<br><br>
+                        # Interactive commands:<br>
+                        # n - Toggle DNS resolution<br>
+                        # s - Toggle source host display<br>
+                        # d - Toggle destination host display<br>
+                        # p - Toggle port display<br>
+                        # q - Quit
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. nmap</h3>
+                    <p>Network exploration and security auditing tool.</p>
+                    <div class="example">
+                        # Install nmap<br>
+                        $ sudo apt install nmap   # Debian/Ubuntu<br>
+                        $ sudo dnf install nmap   # Fedora/RHEL<br><br>
+                        # Scan a single host<br>
+                        $ nmap 192.168.1.1<br>
+                        Starting Nmap 7.80 ( https://nmap.org ) at 2023-05-15 12:34 UTC<br>
+                        Nmap scan report for router.home (192.168.1.1)<br>
+                        Host is up (0.0042s latency).<br>
+                        Not shown: 996 closed ports<br>
+                        PORT   STATE SERVICE<br>
+                        22/tcp open  ssh<br>
+                        53/tcp open  domain<br>
+                        80/tcp open  http<br>
+                        443/tcp open  https<br><br>
+                        # Scan a network range<br>
+                        $ nmap 192.168.1.0/24<br><br>
+                        # Scan specific ports<br>
+                        $ nmap -p 22,80,443 192.168.1.1<br><br>
+                        # Detect operating system<br>
+                        $ sudo nmap -O 192.168.1.1<br><br>
+                        # Service version detection<br>
+                        $ nmap -sV 192.168.1.1
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>7. nmon</h3>
+                    <p>System monitor tool that can display network statistics.</p>
+                    <div class="example">
+                        # Install nmon<br>
+                        $ sudo apt install nmon   # Debian/Ubuntu<br>
+                        $ sudo dnf install nmon   # Fedora/RHEL<br><br>
+                        # Start nmon<br>
+                        $ nmon<br><br>
+                        # Interactive commands:<br>
+                        # n - Display network statistics<br>
+                        # N - Display NFS statistics<br>
+                        # t - Display top processes<br>
+                        # c - Display CPU statistics<br>
+                        # m - Display memory statistics<br>
+                        # d - Display disk statistics<br>
+                        # q - Quit
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>8. iptraf</h3>
+                    <p>Interactive colorful IP LAN monitor.</p>
+                    <div class="example">
+                        # Install iptraf-ng (modern version of iptraf)<br>
+                        $ sudo apt install iptraf-ng   # Debian/Ubuntu<br>
+                        $ sudo dnf install iptraf-ng   # Fedora/RHEL<br><br>
+                        # Start iptraf-ng<br>
+                        $ sudo iptraf-ng<br><br>
+                        # Features:<br>
+                        # - IP traffic monitor<br>
+                        # - General interface statistics<br>
+                        # - Detailed interface statistics<br>
+                        # - Statistical breakdowns<br>
+                        # - LAN station monitor<br>
+                        # - TCP/UDP service monitor<br>
+                        # - Packet size distribution
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>9. review</h3>
+                    <p>Summary of network monitoring tools.</p>
+                    <div class="example">
+                        # Connection information<br>
+                        $ ss -tuln<br><br>
+                        # Bandwidth usage by connection<br>
+                        $ sudo iftop -i eth0<br><br>
+                        # Network discovery<br>
+                        $ nmap 192.168.1.0/24<br><br>
+                        # Packet capture<br>
+                        $ sudo tcpdump -i eth0<br><br>
+                        # System and network monitoring<br>
+                        $ nmon<br><br>
+                        # Interactive network monitor<br>
+                        $ sudo iptraf-ng
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>10. Practice</h3>
+                    <p>Practical network monitoring tasks.</p>
+                    <div class="example">
+                        # Check which services are listening on your system<br>
+                        $ sudo ss -tulnp<br><br>
+                        # Monitor real-time bandwidth usage<br>
+                        $ sudo iftop -i eth0<br><br>
+                        # Capture HTTP traffic<br>
+                        $ sudo tcpdump -i eth0 port 80 -w http_traffic.pcap<br><br>
+                        # Scan your local network for devices<br>
+                        $ sudo nmap -sn 192.168.1.0/24<br><br>
+                        # Monitor network interfaces<br>
+                        $ nmon   # Press 'n' for network statistics<br><br>
+                        # Check network statistics<br>
+                        $ netstat -s | head -20
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Introduction to SSH Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Introduction to SSH
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. ssh</h3>
+                    <p>Secure Shell protocol for secure remote login.</p>
+                    <div class="example">
+                        # SSH (Secure Shell) provides:<br>
+                        # - Encrypted communication<br>
+                        # - Secure remote login<br>
+                        # - Secure file transfer<br>
+                        # - Port forwarding<br><br>
+                        # Basic SSH connection<br>
+                        $ ssh username@hostname<br><br>
+                        # SSH with specific port<br>
+                        $ ssh -p 2222 username@hostname
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. using ssh</h3>
+                    <p>Common SSH usage scenarios.</p>
+                    <div class="example">
+                        # Connect to a remote server<br>
+                        $ ssh user@server.example.com<br><br>
+                        # Execute a command on a remote server<br>
+                        $ ssh user@server.example.com "ls -la /var/log"<br><br>
+                        # Use SSH with key authentication<br>
+                        $ ssh -i ~/.ssh/id_rsa user@server.example.com<br><br>
+                        # Enable X11 forwarding<br>
+                        $ ssh -X user@server.example.com<br><br>
+                        # Local port forwarding<br>
+                        $ ssh -L 8080:localhost:80 user@server.example.com<br><br>
+                        # Remote port forwarding<br>
+                        $ ssh -R 8080:localhost:80 user@server.example.com
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. ssh server</h3>
+                    <p>SSH server configuration and management.</p>
+                    <div class="example">
+                        # Install SSH server<br>
+                        $ sudo apt install openssh-server   # Debian/Ubuntu<br>
+                        $ sudo dnf install openssh-server   # Fedora/RHEL<br><br>
+                        # Start SSH server<br>
+                        $ sudo systemctl start sshd<br><br>
+                        # Enable SSH server to start at boot<br>
+                        $ sudo systemctl enable sshd<br><br>
+                        # Check SSH server status<br>
+                        $ sudo systemctl status sshd<br><br>
+                        # Restart SSH server<br>
+                        $ sudo systemctl restart sshd
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. /etc/ssh/sshd_config</h3>
+                    <p>SSH server configuration file.</p>
+                    <div class="example">
+                        # Edit SSH server configuration<br>
+                        $ sudo vi /etc/ssh/sshd_config<br><br>
+                        # Common configuration options:<br><br>
+                        # Change default port<br>
+                        Port 2222<br><br>
+                        # Disable root login<br>
+                        PermitRootLogin no<br><br>
+                        # Allow specific users<br>
+                        AllowUsers user1 user2<br><br>
+                        # Password authentication<br>
+                        PasswordAuthentication yes<br><br>
+                        # Public key authentication<br>
+                        PubkeyAuthentication yes<br><br>
+                        # After changing configuration, restart SSH server<br>
+                        $ sudo systemctl restart sshd
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. scp</h3>
+                    <p>Secure Copy Protocol for file transfer over SSH.</p>
+                    <div class="example">
+                        # Copy a local file to a remote server<br>
+                        $ scp file.txt user@server.example.com:/path/to/destination/<br><br>
+                        # Copy a remote file to local system<br>
+                        $ scp user@server.example.com:/path/to/file.txt local_directory/<br><br>
+                        # Copy a directory recursively<br>
+                        $ scp -r directory/ user@server.example.com:/path/to/destination/<br><br>
+                        # Copy with specific port<br>
+                        $ scp -P 2222 file.txt user@server.example.com:/path/to/destination/<br><br>
+                        # Copy with compression<br>
+                        $ scp -C file.txt user@server.example.com:/path/to/destination/
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. ssh -D proxy</h3>
+                    <p>Using SSH as a SOCKS proxy.</p>
+                    <div class="example">
+                        # Create a SOCKS proxy on local port 1080<br>
+                        $ ssh -D 1080 user@server.example.com<br><br>
+                        # Now configure your applications to use SOCKS proxy:<br>
+                        # - Host: 127.0.0.1<br>
+                        # - Port: 1080<br><br>
+                        # Use with curl<br>
+                        $ curl --socks5 127.0.0.1:1080 http://example.com<br><br>
+                        # Use with Firefox:<br>
+                        # Settings > Network Settings > Manual proxy configuration<br>
+                        # SOCKS Host: 127.0.0.1, Port: 1080, SOCKS v5
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>7. review</h3>
+                    <p>Summary of SSH concepts and commands.</p>
+                    <div class="example">
+                        # Connect to a remote server<br>
+                        $ ssh user@hostname<br><br>
+                        # Copy files securely<br>
+                        $ scp file.txt user@hostname:/path/<br><br>
+                        # Execute remote command<br>
+                        $ ssh user@hostname "command"<br><br>
+                        # Port forwarding<br>
+                        $ ssh -L local_port:remote_host:remote_port user@hostname<br><br>
+                        # SOCKS proxy<br>
+                        $ ssh -D 1080 user@hostname<br><br>
+                        # SSH server configuration<br>
+                        $ sudo vi /etc/ssh/sshd_config
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>8. Practice</h3>
+                    <p>Practical SSH tasks.</p>
+                    <div class="example">
+                        # Generate SSH key pair<br>
+                        $ ssh-keygen -t rsa -b 4096<br><br>
+                        # Copy public key to a server<br>
+                        $ ssh-copy-id user@server.example.com<br><br>
+                        # Create SSH config file for easier connections<br>
+                        $ vi ~/.ssh/config<br>
+                        Host myserver<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;HostName server.example.com<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;User username<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Port 22<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;IdentityFile ~/.ssh/id_rsa<br><br>
+                        # Now connect with just:<br>
+                        $ ssh myserver<br><br>
+                        # Forward a local web server to a remote port<br>
+                        $ ssh -R 8080:localhost:3000 user@server.example.com
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SSH Clients Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                SSH Clients
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Install SSH</h3>
+                    <p>Installing SSH client on different systems.</p>
+                    <div class="example">
+                        # Install SSH client on Debian/Ubuntu<br>
+                        $ sudo apt install openssh-client<br><br>
+                        # Install SSH client on Fedora/RHEL<br>
+                        $ sudo dnf install openssh-clients<br><br>
+                        # SSH client is pre-installed on most Linux distributions<br>
+                        # and macOS<br><br>
+                        # For Windows, install PuTTY or OpenSSH client<br>
+                        # Windows 10/11 has OpenSSH client available in Settings > Apps > Optional features
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Start Service</h3>
+                    <p>SSH client doesn't run as a service, but SSH server does.</p>
+                    <div class="example">
+                        # SSH client is a command-line tool, not a service<br><br>
+                        # To start SSH server service (if needed):<br>
+                        $ sudo systemctl start sshd<br><br>
+                        # To enable SSH server service at boot:<br>
+                        $ sudo systemctl enable sshd<br><br>
+                        # To check SSH server service status:<br>
+                        $ sudo systemctl status sshd
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Edit File</h3>
+                    <p>Configure SSH client settings.</p>
+                    <div class="example">
+                        # Global SSH client configuration<br>
+                        $ sudo vi /etc/ssh/ssh_config<br><br>
+                        # User-specific SSH client configuration<br>
+                        $ vi ~/.ssh/config<br><br>
+                        # Example configuration:<br>
+                        Host server1<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;HostName 192.168.1.100<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;User admin<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Port 22<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;IdentityFile ~/.ssh/id_rsa<br><br>
+                        Host server2<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;HostName 192.168.1.101<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;User john<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Port 2222<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;IdentityFile ~/.ssh/server2_key
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Firewall Allow</h3>
+                    <p>Configure firewall to allow SSH connections.</p>
+                    <div class="example">
+                        # Allow SSH through UFW (Ubuntu)<br>
+                        $ sudo ufw allow ssh<br><br>
+                        # Allow SSH through firewalld (Fedora/RHEL)<br>
+                        $ sudo firewall-cmd --permanent --add-service=ssh<br>
+                        $ sudo firewall-cmd --reload<br><br>
+                        # Allow SSH on custom port through UFW<br>
+                        $ sudo ufw allow 2222/tcp<br><br>
+                        # Allow SSH on custom port through firewalld<br>
+                        $ sudo firewall-cmd --permanent --add-port=2222/tcp<br>
+                        $ sudo firewall-cmd --reload
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. Practice</h3>
+                    <p>Practical SSH client tasks.</p>
+                    <div class="example">
+                        # Generate SSH key pair<br>
+                        $ ssh-keygen -t rsa -b 4096<br><br>
+                        # Copy public key to server<br>
+                        $ ssh-copy-id user@server<br><br>
+                        # Connect to server<br>
+                        $ ssh user@server<br><br>
+                        # Transfer file to server<br>
+                        $ scp file.txt user@server:/home/user/<br><br>
+                        # Transfer file from server<br>
+                        $ scp user@server:/home/user/file.txt .<br><br>
+                        # Port forwarding<br>
+                        $ ssh -L 8080:localhost:80 user@server
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Telnet Server Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Telnet Server
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Install Telnet Server</h3>
+                    <p>Installing telnet server (not recommended for production use due to security concerns).</p>
+                    <div class="example">
+                        # Install telnet server on Debian/Ubuntu<br>
+                        $ sudo apt install telnetd<br><br>
+                        # Install telnet server on Fedora/RHEL<br>
+                        $ sudo dnf install telnet-server<br><br>
+                        # Note: Telnet transmits data in plaintext, including passwords.<br>
+                        # SSH is strongly recommended instead for secure remote access.
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Edit File</h3>
+                    <p>Configure telnet server settings.</p>
+                    <div class="example">
+                        # Telnet server configuration in inetd.conf<br>
+                        $ sudo vi /etc/inetd.conf<br><br>
+                        # Add or uncomment the following line:<br>
+                        telnet stream tcp nowait telnetd /usr/sbin/tcpd /usr/sbin/in.telnetd<br><br>
+                        # If using xinetd instead of inetd<br>
+                        $ sudo vi /etc/xinetd.d/telnet<br><br>
+                        service telnet<br>
+                        {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;disable = no<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;flags = REUSE<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;socket_type = stream<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;wait = no<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;user = root<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;server = /usr/sbin/in.telnetd<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;log_on_failure += USERID<br>
+                        }
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Start Service Stop Service</h3>
+                    <p>Managing telnet server service.</p>
+                    <div class="example">
+                        # If using systemd<br>
+                        $ sudo systemctl start telnet.socket<br>
+                        $ sudo systemctl stop telnet.socket<br>
+                        $ sudo systemctl enable telnet.socket<br>
+                        $ sudo systemctl disable telnet.socket<br><br>
+                        # If using inetd<br>
+                        $ sudo systemctl restart inetd<br><br>
+                        # If using xinetd<br>
+                        $ sudo systemctl restart xinetd
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Allow Firewall</h3>
+                    <p>Configure firewall to allow telnet connections.</p>
+                    <div class="example">
+                        # Allow telnet through UFW (Ubuntu)<br>
+                        $ sudo ufw allow telnet<br>
+                        # or<br>
+                        $ sudo ufw allow 23/tcp<br><br>
+                        # Allow telnet through firewalld (Fedora/RHEL)<br>
+                        $ sudo firewall-cmd --permanent --add-service=telnet<br>
+                        # or<br>
+                        $ sudo firewall-cmd --permanent --add-port=23/tcp<br>
+                        $ sudo firewall-cmd --reload
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. Practice</h3>
+                    <p>Testing telnet server setup.</p>
+                    <div class="example">
+                        # Check if telnet server is listening<br>
+                        $ sudo ss -tulnp | grep telnet<br><br>
+                        # Connect to local telnet server<br>
+                        $ telnet localhost<br><br>
+                        # Connect to remote telnet server<br>
+                        $ telnet 192.168.1.100<br><br>
+                        # Test telnet server from another machine<br>
+                        $ telnet server_ip
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Telnet Clients Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Telnet Clients
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Install Telnet Clients Linux</h3>
+                    <p>Installing telnet client on Linux systems.</p>
+                    <div class="example">
+                        # Install telnet client on Debian/Ubuntu<br>
+                        $ sudo apt install telnet<br><br>
+                        # Install telnet client on Fedora/RHEL<br>
+                        $ sudo dnf install telnet
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Start Service</h3>
+                    <p>Telnet client doesn't run as a service.</p>
+                    <div class="example">
+                        # Telnet client is a command-line tool, not a service<br>
+                        # It's used directly from the command line:<br><br>
+                        $ telnet hostname_or_ip [port]<br><br>
+                        # Example:<br>
+                        $ telnet 192.168.1.100 23
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Allow Firewall</h3>
+                    <p>Firewall configuration for telnet client.</p>
+                    <div class="example">
+                        # Telnet client typically doesn't need special firewall rules<br>
+                        # as it initiates outbound connections<br><br>
+                        # If outbound connections are restricted, allow outbound to port 23:<br><br>
+                        # Using UFW (Ubuntu)<br>
+                        $ sudo ufw allow out 23/tcp<br><br>
+                        # Using firewalld (Fedora/RHEL)<br>
+                        $ sudo firewall-cmd --permanent --add-port=23/tcp --direction=out<br>
+                        $ sudo firewall-cmd --reload
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Install Telnet Clients Windows</h3>
+                    <p>Installing and using telnet client on Windows.</p>
+                    <div class="example">
+                        # Enable Telnet Client on Windows 10/11:<br>
+                        # 1. Open Control Panel<br>
+                        # 2. Go to Programs > Programs and Features<br>
+                        # 3. Click "Turn Windows features on or off"<br>
+                        # 4. Check "Telnet Client" and click OK<br><br>
+                        # Alternative: Enable via command line (as Administrator)<br>
+                        > dism /online /Enable-Feature /FeatureName:TelnetClient
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. Open Command Prompt</h3>
+                    <p>Using telnet client from Windows command prompt.</p>
+                    <div class="example">
+                        # Open Command Prompt in Windows<br>
+                        # Press Win+R, type "cmd" and press Enter<br><br>
+                        # Connect to a telnet server<br>
+                        > telnet 192.168.1.100<br><br>
+                        # Connect to a specific port<br>
+                        > telnet 192.168.1.100 23<br><br>
+                        # If telnet command not found, make sure it's installed<br>
+                        # as described in the previous section
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. Practice</h3>
+                    <p>Practical telnet client usage.</p>
+                    <div class="example">
+                        # Test if a port is open<br>
+                        $ telnet google.com 80<br><br>
+                        # If connection succeeds, you'll see:<br>
+                        Connected to google.com.<br>
+                        Escape character is '^]'.<br><br>
+                        # You can then type HTTP commands:<br>
+                        GET / HTTP/1.1<br>
+                        Host: google.com<br>
+                        [press Enter twice]<br><br>
+                        # To exit telnet session:<br>
+                        # 1. Press Ctrl+]<br>
+                        # 2. Type "quit" and press Enter
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DHCP Server Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                DHCP Server
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>Introduction to DHCP Server, DHCP Clients</h3>
+                    <p>Dynamic Host Configuration Protocol for automatic IP address assignment.</p>
+                    <div class="example">
+                        # DHCP (Dynamic Host Configuration Protocol):<br>
+                        # - Automatically assigns IP addresses to clients<br>
+                        # - Provides network configuration (subnet mask, gateway, DNS)<br>
+                        # - Manages lease time for IP addresses<br>
+                        # - Centralizes network configuration management<br><br>
+                        # DHCP Process:<br>
+                        # 1. DHCP Discover: Client broadcasts request for IP<br>
+                        # 2. DHCP Offer: Server offers an IP address<br>
+                        # 3. DHCP Request: Client requests the offered IP<br>
+                        # 4. DHCP Acknowledge: Server confirms the assignment
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>1. Install DHCP Server</h3>
+                    <p>Installing DHCP server on Linux.</p>
+                    <div class="example">
+                        # Install DHCP server on Debian/Ubuntu<br>
+                        $ sudo apt install isc-dhcp-server<br><br>
+                        # Install DHCP server on Fedora/RHEL<br>
+                        $ sudo dnf install dhcp-server
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Edit File</h3>
+                    <p>Configure DHCP server settings.</p>
+                    <div class="example">
+                        # Specify network interface for DHCP server<br>
+                        $ sudo vi /etc/default/isc-dhcp-server<br>
+                        # Add or modify:<br>
+                        INTERFACESv4="eth0"<br><br>
+                        # Edit main configuration file<br>
+                        $ sudo vi /etc/dhcp/dhcpd.conf<br><br>
+                        # Basic configuration example:<br>
+                        default-lease-time 600;<br>
+                        max-lease-time 7200;<br>
+                        option subnet-mask 255.255.255.0;<br>
+                        option broadcast-address 192.168.1.255;<br>
+                        option routers 192.168.1.1;<br>
+                        option domain-name-servers 8.8.8.8, 8.8.4.4;<br>
+                        option domain-name "example.local";<br><br>
+                        subnet 192.168.1.0 netmask 255.255.255.0 {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;range 192.168.1.100 192.168.1.200;<br>
+                        }
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Address Lease</h3>
+                    <p>Managing DHCP address leases.</p>
+                    <div class="example">
+                        # Set lease times in dhcpd.conf<br>
+                        default-lease-time 600;      # 10 minutes<br>
+                        max-lease-time 7200;         # 2 hours<br><br>
+                        # View current leases<br>
+                        $ cat /var/lib/dhcp/dhcpd.leases<br><br>
+                        # Reserve IP for specific MAC address<br>
+                        host laptop1 {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;hardware ethernet 00:11:22:33:44:55;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;fixed-address 192.168.1.50;<br>
+                        }
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Example.conf File</h3>
+                    <p>Complete DHCP server configuration example.</p>
+                    <div class="example">
+                        # /etc/dhcp/dhcpd.conf<br><br>
+                        # Global parameters<br>
+                        default-lease-time 600;<br>
+                        max-lease-time 7200;<br>
+                        authoritative;<br><br>
+                        # DNS settings<br>
+                        option domain-name "example.local";<br>
+                        option domain-name-servers 8.8.8.8, 8.8.4.4;<br><br>
+                        # Network configuration<br>
+                        subnet 192.168.1.0 netmask 255.255.255.0 {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;range 192.168.1.100 192.168.1.200;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;option routers 192.168.1.1;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;option broadcast-address 192.168.1.255;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;option subnet-mask 255.255.255.0;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;option ntp-servers 192.168.1.1;<br>
+                        }<br><br>
+                        # Fixed IP assignments<br>
+                        host printer {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;hardware ethernet 00:11:22:33:44:55;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;fixed-address 192.168.1.20;<br>
+                        }<br><br>
+                        host server {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;hardware ethernet AA:BB:CC:DD:EE:FF;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;fixed-address 192.168.1.30;<br>
+                        }
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5-6. Start Stop Restart, Enable Disable</h3>
+                    <p>Managing DHCP server service.</p>
+                    <div class="example">
+                        # Start DHCP server<br>
+                        $ sudo systemctl start isc-dhcp-server<br><br>
+                        # Stop DHCP server<br>
+                        $ sudo systemctl stop isc-dhcp-server<br><br>
+                        # Restart DHCP server<br>
+                        $ sudo systemctl restart isc-dhcp-server<br><br>
+                        # Enable DHCP server to start at boot<br>
+                        $ sudo systemctl enable isc-dhcp-server<br><br>
+                        # Disable DHCP server from starting at boot<br>
+                        $ sudo systemctl disable isc-dhcp-server<br><br>
+                        # Check DHCP server status<br>
+                        $ sudo systemctl status isc-dhcp-server
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>7. Firewalld</h3>
+                    <p>Configure firewall to allow DHCP server.</p>
+                    <div class="example">
+                        # Allow DHCP through UFW (Ubuntu)<br>
+                        $ sudo ufw allow 67/udp<br>
+                        $ sudo ufw allow 68/udp<br><br>
+                        # Allow DHCP through firewalld (Fedora/RHEL)<br>
+                        $ sudo firewall-cmd --permanent --add-service=dhcp<br>
+                        $ sudo firewall-cmd --reload
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>8. Troubleshooting</h3>
+                    <p>Troubleshooting DHCP server issues.</p>
+                    <div class="example">
+                        # Check DHCP server logs<br>
+                        $ sudo journalctl -u isc-dhcp-server<br><br>
+                        # Check configuration syntax<br>
+                        $ sudo dhcpd -t -cf /etc/dhcp/dhcpd.conf<br><br>
+                        # Monitor DHCP traffic<br>
+                        $ sudo tcpdump -i eth0 port 67 or port 68<br><br>
+                        # Check if DHCP server is listening<br>
+                        $ sudo ss -ulnp | grep dhcpd<br><br>
+                        # Restart DHCP server after configuration changes<br>
+                        $ sudo systemctl restart isc-dhcp-server
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>9. Practice</h3>
+                    <p>Setting up a basic DHCP server.</p>
+                    <div class="example">
+                        # 1. Install DHCP server<br>
+                        $ sudo apt install isc-dhcp-server<br><br>
+                        # 2. Configure network interface<br>
+                        $ sudo vi /etc/default/isc-dhcp-server<br>
+                        INTERFACESv4="eth0"<br><br>
+                        # 3. Configure DHCP server<br>
+                        $ sudo vi /etc/dhcp/dhcpd.conf<br>
+                        default-lease-time 600;<br>
+                        max-lease-time 7200;<br>
+                        authoritative;<br><br>
+                        subnet 192.168.1.0 netmask 255.255.255.0 {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;range 192.168.1.100 192.168.1.200;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;option routers 192.168.1.1;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;option domain-name-servers 8.8.8.8, 8.8.4.4;<br>
+                        }<br><br>
+                        # 4. Start and enable DHCP server<br>
+                        $ sudo systemctl start isc-dhcp-server<br>
+                        $ sudo systemctl enable isc-dhcp-server<br><br>
+                        # 5. Allow DHCP in firewall<br>
+                        $ sudo ufw allow 67/udp<br>
+                        $ sudo ufw allow 68/udp
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DHCP Clients Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                DHCP Clients
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Install DHCP Client</h3>
+                    <p>Installing DHCP client on Linux.</p>
+                    <div class="example">
+                        # Install DHCP client on Debian/Ubuntu<br>
+                        $ sudo apt install isc-dhcp-client<br><br>
+                        # Install DHCP client on Fedora/RHEL<br>
+                        $ sudo dnf install dhcp-client<br><br>
+                        # Most Linux distributions have DHCP client pre-installed
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. DHCP Clients Windows OS</h3>
+                    <p>DHCP client on Windows operating systems.</p>
+                    <div class="example">
+                        # Windows has DHCP client enabled by default<br><br>
+                        # To check DHCP status in Windows (Command Prompt)<br>
+                        > ipconfig /all<br>
+                        # Look for "DHCP Enabled: Yes"<br><br>
+                        # To release DHCP lease<br>
+                        > ipconfig /release<br><br>
+                        # To renew DHCP lease<br>
+                        > ipconfig /renew
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. DHCP Client Linux</h3>
+                    <p>Configuring DHCP client on Linux.</p>
+                    <div class="example">
+                        # Configure interface for DHCP in /etc/network/interfaces (Debian/Ubuntu)<br>
+                        $ sudo vi /etc/network/interfaces<br>
+                        auto eth0<br>
+                        iface eth0 inet dhcp<br><br>
+                        # Configure interface for DHCP in NetworkManager (most modern distros)<br>
+                        $ sudo nmcli con mod "Ethernet connection 1" ipv4.method auto<br><br>
+                        # Request IP address using dhclient<br>
+                        $ sudo dhclient eth0<br><br>
+                        # Release IP address<br>
+                        $ sudo dhclient -r eth0
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Troubleshooting</h3>
+                    <p>Troubleshooting DHCP client issues.</p>
+                    <div class="example">
+                        # Check DHCP client logs<br>
+                        $ sudo journalctl -u NetworkManager<br><br>
+                        # Check network interface status<br>
+                        $ ip addr show<br><br>
+                        # Check if DHCP client is running<br>
+                        $ ps aux | grep dhclient<br><br>
+                        # Monitor DHCP traffic<br>
+                        $ sudo tcpdump -i eth0 port 67 or port 68<br><br>
+                        # Restart network interface<br>
+                        $ sudo ifdown eth0 && sudo ifup eth0<br><br>
+                        # Restart NetworkManager<br>
+                        $ sudo systemctl restart NetworkManager
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. ipconfig /release</h3>
+                    <p>Release DHCP lease on Windows.</p>
+                    <div class="example">
+                        # Open Command Prompt as Administrator<br>
+                        > ipconfig /release<br>
+                        # This releases the IP address for all adapters<br><br>
+                        # Release IP for specific adapter<br>
+                        > ipconfig /release "Ethernet"
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. ipconfig /renew</h3>
+                    <p>Renew DHCP lease on Windows.</p>
+                    <div class="example">
+                        # Open Command Prompt as Administrator<br>
+                        > ipconfig /renew<br>
+                        # This requests a new IP address for all adapters<br><br>
+                        # Renew IP for specific adapter<br>
+                        > ipconfig /renew "Ethernet"
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- NFS Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                NFS
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Install NFS Server</h3>
+                    <p>Installing Network File System server.</p>
+                    <div class="example">
+                        # Install NFS server on Debian/Ubuntu<br>
+                        $ sudo apt install nfs-kernel-server<br><br>
+                        # Install NFS server on Fedora/RHEL<br>
+                        $ sudo dnf install nfs-utils
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Edit File</h3>
+                    <p>Configure NFS server exports.</p>
+                    <div class="example">
+                        # Create a directory to share<br>
+                        $ sudo mkdir -p /srv/nfs/share<br>
+                        $ sudo chown nobody:nogroup /srv/nfs/share<br>
+                        $ sudo chmod 777 /srv/nfs/share<br><br>
+                        # Edit exports file<br>
+                        $ sudo vi /etc/exports<br><br>
+                        # Add export entries<br>
+                        /srv/nfs/share 192.168.1.0/24(rw,sync,no_subtree_check)<br>
+                        /home 192.168.1.0/24(ro,sync,no_root_squash)<br><br>
+                        # Export options:<br>
+                        # rw: Read/write access<br>
+                        # ro: Read-only access<br>
+                        # sync: Write changes to disk before replying<br>
+                        # no_subtree_check: Disable subtree checking<br>
+                        # no_root_squash: Allow remote root user to have root privileges
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Start Stop Service</h3>
+                    <p>Managing NFS server service.</p>
+                    <div class="example">
+                        # Start NFS server<br>
+                        $ sudo systemctl start nfs-server<br><br>
+                        # Stop NFS server<br>
+                        $ sudo systemctl stop nfs-server<br><br>
+                        # Check NFS server status<br>
+                        $ sudo systemctl status nfs-server
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Restart</h3>
+                    <p>Restart NFS server and apply changes.</p>
+                    <div class="example">
+                        # Restart NFS server<br>
+                        $ sudo systemctl restart nfs-server<br><br>
+                        # Apply changes to exports without restarting<br>
+                        $ sudo exportfs -ra
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. Enable Disable</h3>
+                    <p>Enable or disable NFS server at boot.</p>
+                    <div class="example">
+                        # Enable NFS server to start at boot<br>
+                        $ sudo systemctl enable nfs-server<br><br>
+                        # Disable NFS server from starting at boot<br>
+                        $ sudo systemctl disable nfs-server
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. Allow Firewalld</h3>
+                    <p>Configure firewall to allow NFS traffic.</p>
+                    <div class="example">
+                        # Allow NFS through UFW (Ubuntu)<br>
+                        $ sudo ufw allow from 192.168.1.0/24 to any port nfs<br><br>
+                        # Allow NFS through firewalld (Fedora/RHEL)<br>
+                        $ sudo firewall-cmd --permanent --add-service=nfs<br>
+                        $ sudo firewall-cmd --permanent --add-service=rpc-bind<br>
+                        $ sudo firewall-cmd --permanent --add-service=mountd<br>
+                        $ sudo firewall-cmd --reload
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>7. Troubleshooting</h3>
+                    <p>Troubleshooting NFS server issues.</p>
+                    <div class="example">
+                        # Check NFS server status<br>
+                        $ sudo systemctl status nfs-server<br><br>
+                        # Show current exports<br>
+                        $ showmount -e localhost<br><br>
+                        # Check if NFS server is listening<br>
+                        $ rpcinfo -p | grep nfs<br><br>
+                        # Check NFS server logs<br>
+                        $ sudo journalctl -u nfs-server<br><br>
+                        # Restart RPC services<br>
+                        $ sudo systemctl restart rpcbind<br>
+                        $ sudo systemctl restart nfs-server
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>8. /etc/fstab</h3>
+                    <p>Configure NFS client for automatic mounting.</p>
+                    <div class="example">
+                        # Edit fstab file<br>
+                        $ sudo vi /etc/fstab<br><br>
+                        # Add NFS mount entry<br>
+                        192.168.1.10:/srv/nfs/share /mnt/nfs nfs defaults 0 0<br><br>
+                        # Mount options for better performance<br>
+                        192.168.1.10:/srv/nfs/share /mnt/nfs nfs rw,sync,hard,intr 0 0<br><br>
+                        # Apply changes<br>
+                        $ sudo mount -a
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>9. Practice</h3>
+                    <p>Setting up NFS server and client.</p>
+                    <div class="example">
+                        # Server setup<br>
+                        $ sudo apt install nfs-kernel-server<br>
+                        $ sudo mkdir -p /srv/nfs/share<br>
+                        $ sudo chown nobody:nogroup /srv/nfs/share<br>
+                        $ sudo vi /etc/exports<br>
+                        /srv/nfs/share 192.168.1.0/24(rw,sync,no_subtree_check)<br>
+                        $ sudo exportfs -ra<br>
+                        $ sudo systemctl restart nfs-server<br><br>
+                        # Client setup<br>
+                        $ sudo apt install nfs-common<br>
+                        $ sudo mkdir -p /mnt/nfs<br>
+                        $ sudo mount 192.168.1.10:/srv/nfs/share /mnt/nfs<br><br>
+                        # Test NFS share<br>
+                        $ touch /mnt/nfs/testfile<br>
+                        $ ls -l /mnt/nfs
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Samba Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Samba
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Install Samba</h3>
+                    <p>Installing Samba for Windows file sharing.</p>
+                    <div class="example">
+                        # Install Samba on Debian/Ubuntu<br>
+                        $ sudo apt install samba samba-common-bin<br><br>
+                        # Install Samba on Fedora/RHEL<br>
+                        $ sudo dnf install samba samba-client
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Edit File</h3>
+                    <p>Configure Samba shares.</p>
+                    <div class="example">
+                        # Create a directory to share<br>
+                        $ sudo mkdir -p /srv/samba/share<br>
+                        $ sudo chmod 777 /srv/samba/share<br><br>
+                        # Backup original configuration<br>
+                        $ sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak<br><br>
+                        # Edit Samba configuration<br>
+                        $ sudo vi /etc/samba/smb.conf<br><br>
+                        # Add share configuration<br>
+                        [global]<br>
+                        workgroup = WORKGROUP<br>
+                        server string = Samba Server<br>
+                        security = user<br>
+                        map to guest = bad user<br>
+                        dns proxy = no<br><br>
+                        [share]<br>
+                        path = /srv/samba/share<br>
+                        browsable = yes<br>
+                        writable = yes<br>
+                        guest ok = yes<br>
+                        read only = no<br>
+                        create mask = 0777<br>
+                        directory mask = 0777
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Start Stop Restart Service</h3>
+                    <p>Managing Samba service.</p>
+                    <div class="example">
+                        # Start Samba services<br>
+                        $ sudo systemctl start smbd<br>
+                        $ sudo systemctl start nmbd<br><br>
+                        # Stop Samba services<br>
+                        $ sudo systemctl stop smbd<br>
+                        $ sudo systemctl stop nmbd<br><br>
+                        # Restart Samba services<br>
+                        $ sudo systemctl restart smbd<br>
+                        $ sudo systemctl restart nmbd<br><br>
+                        # Check Samba status<br>
+                        $ sudo systemctl status smbd
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Enable Firewalld</h3>
+                    <p>Configure firewall to allow Samba traffic.</p>
+                    <div class="example">
+                        # Allow Samba through UFW (Ubuntu)<br>
+                        $ sudo ufw allow samba<br><br>
+                        # Allow Samba through firewalld (Fedora/RHEL)<br>
+                        $ sudo firewall-cmd --permanent --add-service=samba<br>
+                        $ sudo firewall-cmd --reload
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. Practice</h3>
+                    <p>Setting up a Samba server.</p>
+                    <div class="example">
+                        # 1. Install Samba<br>
+                        $ sudo apt install samba samba-common-bin<br><br>
+                        # 2. Create share directory<br>
+                        $ sudo mkdir -p /srv/samba/public<br>
+                        $ sudo chmod 777 /srv/samba/public<br><br>
+                        # 3. Configure Samba<br>
+                        $ sudo vi /etc/samba/smb.conf<br>
+                        [public]<br>
+                        path = /srv/samba/public<br>
+                        browsable = yes<br>
+                        writable = yes<br>
+                        guest ok = yes<br>
+                        read only = no<br><br>
+                        # 4. Restart Samba<br>
+                        $ sudo systemctl restart smbd<br><br>
+                        # 5. Allow Samba in firewall<br>
+                        $ sudo ufw allow samba
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. Solution</h3>
+                    <p>Troubleshooting Samba issues.</p>
+                    <div class="example">
+                        # Check Samba configuration<br>
+                        $ testparm<br><br>
+                        # Check Samba status<br>
+                        $ sudo systemctl status smbd<br><br>
+                        # Check Samba logs<br>
+                        $ sudo tail -f /var/log/samba/log.smbd<br><br>
+                        # Restart Samba after configuration changes<br>
+                        $ sudo systemctl restart smbd<br><br>
+                        # Create Samba user<br>
+                        $ sudo smbpasswd -a username<br><br>
+                        # List Samba shares<br>
+                        $ smbclient -L localhost
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Samba Client Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Samba Client
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Windows Clients</h3>
+                    <p>Accessing Samba shares from Windows.</p>
+                    <div class="example">
+                        # Access Samba share from Windows File Explorer<br>
+                        # 1. Press Win+R to open Run dialog<br>
+                        # 2. Type \\server-ip-address or \\server-name<br>
+                        # 3. Press Enter<br><br>
+                        # Example:<br>
+                        \\192.168.1.10<br><br>
+                        # Map network drive<br>
+                        # 1. Open File Explorer<br>
+                        # 2. Right-click on "This PC"<br>
+                        # 3. Select "Map network drive"<br>
+                        # 4. Choose a drive letter<br>
+                        # 5. Enter \\server-ip-address\share-name<br>
+                        # 6. Click "Finish"
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Accessing Windows Clients IP</h3>
+                    <p>Accessing Windows shares from Linux.</p>
+                    <div class="example">
+                        # Install Samba client<br>
+                        $ sudo apt install smbclient<br><br>
+                        # List available shares on a Windows computer<br>
+                        $ smbclient -L //192.168.1.20 -U username<br><br>
+                        # Connect to a Windows share<br>
+                        $ smbclient //192.168.1.20/share -U username<br><br>
+                        # Mount Windows share<br>
+                        $ sudo mkdir -p /mnt/windows-share<br>
+                        $ sudo mount -t cifs //192.168.1.20/share /mnt/windows-share -o username=user,password=pass<br><br>
+                        # Add to fstab for persistent mounting<br>
+                        $ sudo vi /etc/fstab<br>
+                        //192.168.1.20/share /mnt/windows-share cifs username=user,password=pass,uid=1000,gid=1000 0 0
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Practice</h3>
+                    <p>Practical Samba client tasks.</p>
+                    <div class="example">
+                        # Access Samba share from Linux<br>
+                        $ smbclient //192.168.1.10/public<br>
+                        Enter WORKGROUP\username's password: <br>
+                        smb: \> ls<br>
+                        smb: \> get file.txt<br>
+                        smb: \> put local-file.txt<br>
+                        smb: \> quit<br><br>
+                        # Mount Samba share<br>
+                        $ sudo mkdir -p /mnt/samba<br>
+                        $ sudo mount -t cifs //192.168.1.10/public /mnt/samba -o guest<br><br>
+                        # Copy files to/from Samba share<br>
+                        $ cp file.txt /mnt/samba/<br>
+                        $ cp /mnt/samba/file.txt .
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bind9 Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Bind9
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Install Bind</h3>
+                    <p>Installing Bind DNS server.</p>
+                    <div class="example">
+                        # Install Bind on Debian/Ubuntu<br>
+                        $ sudo apt install bind9 bind9utils bind9-doc<br><br>
+                        # Install Bind on Fedora/RHEL<br>
+                        $ sudo dnf install bind bind-utils
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Edit File</h3>
+                    <p>Configure Bind DNS server.</p>
+                    <div class="example">
+                        # Edit main configuration file<br>
+                        $ sudo vi /etc/bind/named.conf.local<br><br>
+                        # Add zone configuration<br>
+                        zone "example.local" {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;type master;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;file "/etc/bind/zones/db.example.local";<br>
+                        };<br><br>
+                        zone "1.168.192.in-addr.arpa" {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;type master;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;file "/etc/bind/zones/db.192.168.1";<br>
+                        };<br><br>
+                        # Create zones directory<br>
+                        $ sudo mkdir -p /etc/bind/zones<br><br>
+                        # Create forward zone file<br>
+                        $ sudo vi /etc/bind/zones/db.example.local<br><br>
+                        $TTL    604800<br>
+                        @       IN      SOA     ns1.example.local. admin.example.local. (<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      2023051501      ; Serial<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      604800          ; Refresh<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      86400           ; Retry<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      2419200         ; Expire<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      604800 )        ; Negative Cache TTL<br>
+                        ;<br>
+                        @       IN      NS      ns1.example.local.<br>
+                        ns1     IN      A       192.168.1.10<br>
+                        www     IN      A       192.168.1.20<br>
+                        mail    IN      A       192.168.1.30<br>
+                        @       IN      MX      10      mail.example.local.
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Start Stop Service</h3>
+                    <p>Managing Bind DNS server service.</p>
+                    <div class="example">
+                        # Start Bind service<br>
+                        $ sudo systemctl start named<br><br>
+                        # Stop Bind service<br>
+                        $ sudo systemctl stop named<br><br>
+                        # Restart Bind service<br>
+                        $ sudo systemctl restart named<br><br>
+                        # Check Bind status<br>
+                        $ sudo systemctl status named
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Zone File</h3>
+                    <p>DNS zone file configuration.</p>
+                    <div class="example">
+                        # Create reverse zone file<br>
+                        $ sudo vi /etc/bind/zones/db.192.168.1<br><br>
+                        $TTL    604800<br>
+                        @       IN      SOA     ns1.example.local. admin.example.local. (<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      2023051501      ; Serial<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      604800          ; Refresh<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      86400           ; Retry<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      2419200         ; Expire<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      604800 )        ; Negative Cache TTL<br>
+                        ;<br>
+                        @       IN      NS      ns1.example.local.<br>
+                        10      IN      PTR     ns1.example.local.<br>
+                        20      IN      PTR     www.example.local.<br>
+                        30      IN      PTR     mail.example.local.
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. Reverse File</h3>
+                    <p>DNS reverse lookup zone configuration.</p>
+                    <div class="example">
+                        # Reverse zone file format<br>
+                        # The file name should match the zone name in named.conf.local<br><br>
+                        # For network 192.168.1.0/24:<br>
+                        # Zone name: 1.168.192.in-addr.arpa<br>
+                        # File: db.192.168.1<br><br>
+                        # PTR records map IP addresses to hostnames<br>
+                        # 10.1.168.192.in-addr.arpa. IN PTR ns1.example.local.<br>
+                        # In the zone file, this is shortened to:<br>
+                        # 10 IN PTR ns1.example.local.
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. Troubleshooting</h3>
+                    <p>Troubleshooting Bind DNS server issues.</p>
+                    <div class="example">
+                        # Check configuration syntax<br>
+                        $ sudo named-checkconf<br><br>
+                        # Check zone file syntax<br>
+                        $ sudo named-checkzone example.local /etc/bind/zones/db.example.local<br><br>
+                        # Check reverse zone file syntax<br>
+                        $ sudo named-checkzone 1.168.192.in-addr.arpa /etc/bind/zones/db.192.168.1<br><br>
+                        # Check Bind logs<br>
+                        $ sudo journalctl -u named<br><br>
+                        # Test DNS resolution<br>
+                        $ dig @localhost www.example.local<br><br>
+                        # Test reverse DNS lookup<br>
+                        $ dig @localhost -x 192.168.1.20
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>7. Practice</h3>
+                    <p>Setting up a basic DNS server.</p>
+                    <div class="example">
+                        # 1. Install Bind<br>
+                        $ sudo apt install bind9 bind9utils<br><br>
+                        # 2. Configure zones<br>
+                        $ sudo vi /etc/bind/named.conf.local<br>
+                        zone "example.local" {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;type master;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;file "/etc/bind/zones/db.example.local";<br>
+                        };<br><br>
+                        # 3. Create zone file<br>
+                        $ sudo mkdir -p /etc/bind/zones<br>
+                        $ sudo vi /etc/bind/zones/db.example.local<br>
+                        $TTL    604800<br>
+                        @       IN      SOA     ns1.example.local. admin.example.local. (<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      1               ; Serial<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      604800          ; Refresh<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      86400           ; Retry<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      2419200         ; Expire<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      604800 )        ; Negative Cache TTL<br>
+                        ;<br>
+                        @       IN      NS      ns1.example.local.<br>
+                        ns1     IN      A       192.168.1.10<br>
+                        www     IN      A       192.168.1.20<br><br>
+                        # 4. Restart Bind<br>
+                        $ sudo systemctl restart named<br><br>
+                        # 5. Test DNS resolution<br>
+                        $ dig @localhost www.example.local
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Webserver Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Webserver
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Apache</h3>
+                    <p>Installing Apache web server.</p>
+                    <div class="example">
+                        # Install Apache on Debian/Ubuntu<br>
+                        $ sudo apt install apache2<br><br>
+                        # Install Apache on Fedora/RHEL<br>
+                        $ sudo dnf install httpd
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Nginx</h3>
+                    <p>Installing Nginx web server.</p>
+                    <div class="example">
+                        # Install Nginx on Debian/Ubuntu<br>
+                        $ sudo apt install nginx<br><br>
+                        # Install Nginx on Fedora/RHEL<br>
+                        $ sudo dnf install nginx
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Configuration</h3>
+                    <p>Configuring web server settings.</p>
+                    <div class="example">
+                        # Apache configuration<br>
+                        $ sudo vi /etc/apache2/apache2.conf<br>
+                        # Nginx configuration<br>
+                        $ sudo vi /etc/nginx/nginx.conf
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Start Stop Service</h3>
+                    <p>Managing web server service.</p>
+                    <div class="example">
+                        # Apache<br>
+                        $ sudo systemctl start apache2<br>
+                        $ sudo systemctl stop apache2<br>
+                        $ sudo systemctl restart apache2<br><br>
+                        # Nginx<br>
+                        $ sudo systemctl start nginx<br>
+                        $ sudo systemctl stop nginx<br>
+                        $ sudo systemctl restart nginx
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. Firewall</h3>
+                    <p>Configuring firewall for web server.</p>
+                    <div class="example">
+                        # Apache<br>
+                        $ sudo ufw allow http<br>
+                        $ sudo ufw allow https<br><br>
+                        # Nginx<br>
+                        $ sudo ufw allow http<br>
+                        $ sudo ufw allow https
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. Practice</h3>
+                    <p>Setting up a web server.</p>
+                    <div class="example">
+                        # 1. Install Apache or Nginx<br>
+                        $ sudo apt install apache2 nginx<br><br>
+                        # 2. Configure web server<br>
+                        $ sudo vi /etc/apache2/apache2.conf /etc/nginx/nginx.conf<br>
+                        # 3. Start web server<br>
+                        $ sudo systemctl start apache2 nginx<br><br>
+                        # 4. Allow web server traffic in firewall<br>
+                        $ sudo ufw allow http https
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Nginx Webserver Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Nginx Webserver
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Install Web Server Using Nginx</h3>
+                    <p>Installing Nginx web server.</p>
+                    <div class="example">
+                        # Install Nginx on Debian/Ubuntu<br>
+                        $ sudo apt install nginx<br><br>
+                        # Install Nginx on Fedora/RHEL<br>
+                        $ sudo dnf install nginx
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. Edit File</h3>
+                    <p>Configure Nginx web server.</p>
+                    <div class="example">
+                        # Main configuration file<br>
+                        $ sudo vi /etc/nginx/nginx.conf<br><br>
+                        # Site configuration<br>
+                        $ sudo vi /etc/nginx/sites-available/default<br><br>
+                        # Example virtual host configuration<br>
+                        server {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;listen 80;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;server_name example.local www.example.local;<br><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;root /var/www/html;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;index index.html index.htm;<br><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;location / {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try_files $uri $uri/ =404;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        }<br><br>
+                        # Create a simple HTML file<br>
+                        $ sudo vi /var/www/html/index.html<br>
+                        &lt;!DOCTYPE html&gt;<br>
+                        &lt;html&gt;<br>
+                        &lt;head&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Welcome to Nginx&lt;/title&gt;<br>
+                        &lt;/head&gt;<br>
+                        &lt;body&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Success! Nginx is working!&lt;/h1&gt;<br>
+                        &lt;/body&gt;<br>
+                        &lt;/html&gt;
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Start Stop Service</h3>
+                    <p>Managing Nginx web server service.</p>
+                    <div class="example">
+                        # Start Nginx<br>
+                        $ sudo systemctl start nginx<br><br>
+                        # Stop Nginx<br>
+                        $ sudo systemctl stop nginx<br><br>
+                        # Restart Nginx<br>
+                        $ sudo systemctl restart nginx<br><br>
+                        # Reload Nginx configuration without stopping<br>
+                        $ sudo systemctl reload nginx<br><br>
+                        # Check Nginx status<br>
+                        $ sudo systemctl status nginx
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Enable Disable</h3>
+                    <p>Enable or disable Nginx service at boot.</p>
+                    <div class="example">
+                        # Enable Nginx to start at boot<br>
+                        $ sudo systemctl enable nginx<br><br>
+                        # Disable Nginx from starting at boot<br>
+                        $ sudo systemctl disable nginx
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. Allow Firewalld</h3>
+                    <p>Configure firewall to allow web traffic.</p>
+                    <div class="example">
+                        # Allow HTTP through UFW (Ubuntu)<br>
+                        $ sudo ufw allow http<br>
+                        $ sudo ufw allow https<br><br>
+                        # Allow HTTP through firewalld (Fedora/RHEL)<br>
+                        $ sudo firewall-cmd --permanent --add-service=http<br>
+                        $ sudo firewall-cmd --permanent --add-service=https<br>
+                        $ sudo firewall-cmd --reload
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. Practice</h3>
+                    <p>Setting up a basic web server.</p>
+                    <div class="example">
+                        # 1. Install Nginx<br>
+                        $ sudo apt install nginx<br><br>
+                        # 2. Create a custom web page<br>
+                        $ sudo vi /var/www/html/index.html<br>
+                        &lt;!DOCTYPE html&gt;<br>
+                        &lt;html&gt;<br>
+                        &lt;head&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My Website&lt;/title&gt;<br>
+                        &lt;/head&gt;<br>
+                        &lt;body&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Welcome to my website!&lt;/h1&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This is a test page for Nginx.&lt;/p&gt;<br>
+                        &lt;/body&gt;<br>
+                        &lt;/html&gt;<br><br>
+                        # 3. Start and enable Nginx<br>
+                        $ sudo systemctl start nginx<br>
+                        $ sudo systemctl enable nginx<br><br>
+                        # 4. Allow web traffic in firewall<br>
+                        $ sudo ufw allow http<br><br>
+                        # 5. Test the website<br>
+                        $ curl http://localhost
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>7. Solution</h3>
+                    <p>Troubleshooting common Nginx issues.</p>
+                    <div class="example">
+                        # Check Nginx error logs<br>
+                        $ sudo tail -f /var/log/nginx/error.log<br><br>
+                        # Check Nginx access logs<br>
+                        $ sudo tail -f /var/log/nginx/access.log<br><br>
+                        # Test Nginx configuration<br>
+                        $ sudo nginx -t<br><br>
+                        # Check if Nginx is running<br>
+                        $ sudo systemctl status nginx<br><br>
+                        # Check if Nginx is listening on port 80<br>
+                        $ sudo ss -tulpn | grep nginx<br><br>
+                        # Check file permissions<br>
+                        $ ls -la /var/www/html/<br><br>
+                        # Restart Nginx after fixing issues<br>
+                        $ sudo systemctl restart nginx
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Clients DNS and Nginx Section -->
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Clients DNS and Nginx
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>1. Access Website</h3>
+                    <p>Accessing a website from a client.</p>
+                    <div class="example">
+                        # Using a web browser<br>
+                        # Open Firefox, Chrome, or any browser and enter the URL<br><br>
+                        # Using command line<br>
+                        $ curl http://example.local<br><br>
+                        # Using wget<br>
+                        $ wget http://example.local<br><br>
+                        # Using lynx (text-based browser)<br>
+                        $ lynx http://example.local
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>2. IP Address Accessing Web</h3>
+                    <p>Accessing a website using IP address.</p>
+                    <div class="example">
+                        # Using a web browser<br>
+                        # Enter http://192.168.1.10 in the address bar<br><br>
+                        # Using command line<br>
+                        $ curl http://192.168.1.10<br><br>
+                        # Using wget<br>
+                        $ wget http://192.168.1.10<br><br>
+                        # Testing with specific headers<br>
+                        $ curl -I http://192.168.1.10<br>
+                        HTTP/1.1 200 OK<br>
+                        Server: nginx/1.18.0<br>
+                        Date: Mon, 15 May 2023 12:34:56 GMT<br>
+                        Content-Type: text/html<br>
+                        Content-Length: 612<br>
+                        Last-Modified: Mon, 15 May 2023 10:00:00 GMT<br>
+                        Connection: keep-alive<br>
+                        ETag: "1234567890abcdef"<br>
+                        Accept-Ranges: bytes
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>3. Domain Accessing Web</h3>
+                    <p>Accessing a website using domain name.</p>
+                    <div class="example">
+                        # Configure client to use your DNS server<br>
+                        $ sudo vi /etc/resolv.conf<br>
+                        nameserver 192.168.1.10<br><br>
+                        # Test DNS resolution<br>
+                        $ nslookup example.local<br>
+                        Server:         192.168.1.10<br>
+                        Address:        192.168.1.10#53<br><br>
+                        Name:   example.local<br>
+                        Address: 192.168.1.20<br><br>
+                        # Access website using domain name<br>
+                        $ curl http://example.local<br><br>
+                        # Access website with specific host header<br>
+                        $ curl -H "Host: example.local" http://192.168.1.20
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>4. Review</h3>
+                    <p>Summary of client-side web access methods.</p>
+                    <div class="example">
+                        # Different ways to access a website:<br><br>
+                        # 1. Using IP address<br>
+                        $ curl http://192.168.1.20<br><br>
+                        # 2. Using domain name (requires DNS)<br>
+                        $ curl http://example.local<br><br>
+                        # 3. Using hosts file (no DNS required)<br>
+                        $ sudo vi /etc/hosts<br>
+                        192.168.1.20 example.local www.example.local<br><br>
+                        # 4. Using specific port<br>
+                        $ curl http://example.local:8080<br><br>
+                        # 5. Using HTTPS (if configured)<br>
+                        $ curl https://example.local
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>5. Practice</h3>
+                    <p>Practical exercises for client-side web access.</p>
+                    <div class="example">
+                        # 1. Configure DNS client<br>
+                        $ sudo vi /etc/resolv.conf<br>
+                        nameserver 192.168.1.10<br><br>
+                        # 2. Test DNS resolution<br>
+                        $ dig example.local<br><br>
+                        # 3. Access website using domain name<br>
+                        $ curl http://example.local<br><br>
+                        # 4. Create a local hosts entry<br>
+                        $ sudo vi /etc/hosts<br>
+                        192.168.1.20 test.local<br><br>
+                        # 5. Access website using the hosts entry<br>
+                        $ curl http://test.local<br><br>
+                        # 6. Compare response headers<br>
+                        $ curl -I http://example.local<br>
+                        $ curl -I http://192.168.1.20
+                    </div>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>6. Solution</h3>
+                    <p>Troubleshooting client-side web access issues.</p>
+                    <div class="example">
+                        # Check DNS resolution<br>
+                        $ nslookup example.local<br>
+                        $ dig example.local<br><br>
+                        # Check connectivity to web server<br>
+                        $ ping 192.168.1.20<br><br>
+                        # Check if web server port is open<br>
+                        $ telnet 192.168.1.20 80<br><br>
+                        # Check routing<br>
+                        $ traceroute 192.168.1.20<br><br>
+                        # Check local firewall<br>
+                        $ sudo ufw status<br><br>
+                        # Check browser cache and cookies<br>
+                        # In Firefox: Ctrl+Shift+Delete<br>
+                        # In Chrome: Ctrl+Shift+Delete<br><br>
+                        # Try with different browser or curl
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h1>Future Chapters</h1>
+        
+        <div class="dropdown">
+            <div class="dropdown-header">
+                Coming Soon
+                <span class="toggle">+</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="sub-item">
+                    <h3>Chapter 5: More Linux System Management</h3>
+                    <p>Advanced system management topics.</p>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>Chapter 6: Linux Storage</h3>
+                    <p>Comprehensive storage management.</p>
+                </div>
+                
+                <div class="sub-item">
+                    <h3>Chapter 7: Linux Server</h3>
+                    <p>Enterprise server configuration and management.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown-header');
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                    
+                    const toggle = this.querySelector('.toggle');
+                    toggle.textContent = content.classList.contains('active') ? '-' : '+';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

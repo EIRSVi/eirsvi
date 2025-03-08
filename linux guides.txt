@@ -1,0 +1,303 @@
+Chapter 1: introduction to shell
+• Shell commands
+	1. /bin/bash
+	2. Which
+	3. Type operator
+• Shell variables
+	1. Variable in the shell
+	2. Variable in the quotes
+	3. $SHELL
+	4. $PATH
+• Shell history
+	1. !n
+	2. Ctrl-r
+	3. ~/.bash_history
+	• Regular expression
+	1. Grep
+	2. Rename
+	3. Sed bash history
+	4. Practice
+	
+Chapter 2: introduction to VI and Scripting
+• Introduction to VI
+	1. Vim
+	2. :q! exciting vi
+	3. A for insert od
+	4. :w write to file
+	5. 0 and $ start and end of line
+	6. W and b word and back
+	7. D for delete
+	8. Dd delete line and p P paste
+	9. Practice
+• Introduction to script
+	1. Hello world
+	2. Comment
+	3. Variables in a script
+	4. Sourcing input troubleshooting a script
+	5. Practice
+	
+	
+Chapter 3: Linux system management
+• File permissions
+	1. R<Read>
+	2. W<Write>
+	3. X<Execute>
+	4. Owner user<U>
+	5. Owner Group<G>
+	6. Other<o>
+	7. All<a>8. #chmod //command
+	9. #chgrp //command
+	10. #chown //command
+	11. Review practice
+• File permission
+	1. Octal number Ex: (000)(777)
+	2. R=2
+	3. W=4
+	4. X=1
+	5. ---=0
+	6. Sharing profile /etc/login/skel
+	7. Understanding Umask
+Advance file permission
+	1. Add Set SGID
+	2. Set SUID
+	3. Sticky bit
+	4. Remove SGID
+	5. Remove SUID
+	6. Review
+	7. Practice
+User Management
+	1. Listing users /etc/passwd
+	2. Listing file format /etc/passwd
+	3. Delete user command
+	4. Disable users command
+	5. Manage users profile
+	6. Switch user account
+	7. user id command
+	8. review practice
+User Password management
+	1. /etc/shadow
+	2. /etc/shadow- //backup password file
+	3. Understanding password file format :
+	4. Minimum Password age <m>
+	5. Maximum password age <M>
+	6. Password expired
+	7. Account expired
+	8. #charg command //
+	9. /edit/file /etc/shadow
+Groups Management
+	1. Primary groups, Secondary groups
+	2. Create group
+	3. Delete group
+	4. Add user to group
+	5. Remove user from group
+	6. Set admin to groups
+	7. #gpasswd -a
+	8. #gpasswd -d
+	9. #gpasswd -A
+	10. #usermod -a -G
+	11. Review
+	12. Practice
+Group Password Management
+	1. File password /etc/gshadow
+	2. File backup /etc/gashadow
+	3. File password format
+	4. Edit file with “vi”
+	5. Review
+	6. practice
+Introduction to Process
+	1. /etc/proc
+	2. pid
+	3. ps
+	4. init
+	5. kill
+	6. zombie
+	7. Whereis
+	8. Mandb
+	9. Cheat sheet
+	10. Practice
+	11. Solution
+Signaling processes
+	1. Kill -l
+	2. Kill -1
+	4. Kill -2
+	5. Pkill
+Processing job
+	1. Sleep &
+	2. Ctl+z
+	3. bg
+	4. fg
+	5. Kill
+Process priorities
+	CPU monitoring
+	1. Top
+	2. Ps
+	3. Glances
+	4. mpstat
+Package management 
+Repository
+	1. File format
+Online install
+	1. Dnf tool
+	2. Yum tool
+	3. Download
+	4. Edit
+Offline install
+	1. Check file already installed
+	2. rpm -qa | grep <package_name>
+	3. rpm -ivh <package_name>
+	4. rpm -e //remove package
+	5. check service name
+Edit file
+	1. /etc/<file>
+	2. Package name
+	3. Service name
+	4. Start stop restart service name
+	5. Directory binary file
+Chapter 4: Linux storage
+Introduction Linux storage
+	1. Hard disk
+	2. Block device
+	3. /dev/sd*
+	4. Fdisk -l
+	5. Dmesg
+	6. Practice
+Linux Network management
+Introduction to network
+	1. TCP/IP
+	2. Layers/protocols
+	3. Ip-address
+	4. Mac-address
+	5. Tcp-udp
+	6. Port
+	7. Tcp/ip device
+	8. Unicast – broadcast
+	9. Lan-wan
+	10. Reviews
+	11. Practice
+Manage tcp/ip
+	1. Network adapters
+	2. Ip a
+	3. Ip n
+	4. Ip r
+	5. /etc/network/interface
+	6. ping
+	7. add ip address
+	8. dhcp-clients
+	9. traceroute
+	10. ssh
+	11. telnet
+	12. review
+	13. practice
+	14. Practice
+Network monitor
+	1. Network monitor
+	2. Netstat ss
+	3. ntop
+	4. sniffing the network
+	5. iftop
+	6. nmap
+	7. nmon
+	8. iptraf
+	9. review
+	10. Practice
+Introduction to ssh
+	11. ssh
+	12. using ssh
+	13. ssh server
+	14. /etc/ssh/sshed_config
+	15. scp
+	16. ssh -D proxy
+	17. review
+	18. Practice
+Ssh clients
+	1. Install ssh
+	2. Start service
+	3. Edit file
+	4. Firewall allow
+	5. Practice
+telnet-server
+	1. Install telnet-server
+	2. Edit file
+	3. Start service stop service
+	4. Allow firewall
+	5. Practice
+telnet-clients
+	1. Install telnet-clients linux
+	2. Start service
+	3. Allow firewall
+	4. Install telnet clients windows
+	5. Open command prompt
+	6. Practice
+Dhcp-server
+Introcution to dhcp server , dhcp clients
+	1. Install dhcp-server
+	2. Edit file
+	3. Address lease
+	4. Example.conf file
+	5. Start stop restart
+	6. Enable disable
+	7. Firewalld
+	Practice
+Install dhcp -server
+	Edit file
+Dhcp-clients
+	1. Install dhcp-client
+	2. Dhcp-clients window os
+	3. Dhcp-client linux
+	4. Troubleshooting
+	5. Ipconfig /release
+	6. Ipconfig /renew
+NFS
+	1. Install nfs server
+	2. Edit file
+	3. Start stop service
+	4. Restart
+	5. Enable disable
+	6. Allow firewalld
+	7. Troubleshooting
+	8. /etc/fstab
+	9. Practice
+Practice
+Nfs-server
+	Installation check connection
+	1. Service status
+	2. Restart service
+	3. Install nfs client
+	4. Connection nfs client to server
+Samba
+	1. Install samba
+	2. Edit file
+	3. Start stop restart service
+	• Enable firewalld
+	• Practice
+	• Solution
+Samba client
+	1. Windows clients
+	2. Accessing windows clients IP
+	3. Practice
+Bind9
+	1. Install bind
+	2. Edit file
+	3. Start stop service
+	4. Zone file
+	5. Reverse file
+	6. Troubleshooting
+	7. practice
+Webserver
+	1. install web server using nginx
+	2. edit file
+	3. start stop service
+	4. enable disable
+	5. allow firewalld
+	6. practice
+	7. solution
+Clients dns and nginx
+	1. access website
+	2. ip address accessing web
+	3. domain accessing web
+	• review
+	• practice
+	• solution
+Chapter 5: more Linux system management
+Chapter 6: Linux storage
+Chapter 7: Linux server
