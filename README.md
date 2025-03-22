@@ -21,11 +21,11 @@
 
 ### **Repository**
 <p align="center">
-  <a href="https://github.com/EIRSVi/management-sys">
+<!--   <a href="https://github.com/EIRSVi/management-sys">
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=EIRSVi&repo=management-sys&theme=radical&hide_border=true" />
-  </a>
-  <a href="https://github.com/EIRSVi/authentication-rwx">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=EIRSVi&repo=authentication-rwx&theme=radical&hide_border=true" />
+  </a> -->
+  <a href="https://github.com/EIRSVi/ECommerceManager">
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=EIRSVi&repo=ECommerceManager&theme=radical&hide_border=true" />
   </a>
 </p>
 
