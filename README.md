@@ -24,8 +24,8 @@
 <!--   <a href="https://github.com/EIRSVi/management-sys">
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=EIRSVi&repo=management-sys&theme=radical&hide_border=true" />
   </a> -->
-  <a href="https://github.com/EIRSVi/eCommerce-Manager">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=EIRSVi&repo=eCommerce-Manager&theme=radical&hide_border=true" />
+  <a href="https://github.com/EIRSVi/eCommerceSystem">
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=EIRSVi&repo=eCommerceSystem&theme=radical&hide_border=true" />
   </a>
 </p>
 
