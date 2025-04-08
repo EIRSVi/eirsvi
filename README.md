@@ -18,7 +18,7 @@
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=EIRSVi&layout=donut&theme=radical&hide_border=true)](https://github.com/EIRSVi)
 
 
-
+![](https://komarev.com/ghpvc/?username=EIRSVi&label=PROFILE+VIEWS)
 ### **Repository**
 <p align="center">
 <!--   <a href="https://github.com/EIRSVi/management-sys">
