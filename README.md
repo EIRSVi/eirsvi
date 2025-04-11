@@ -2,7 +2,7 @@
   <img src="assets/githubcopilot.svg" width="30" height="30" style="filter: invert(60%) sepia(50%) saturate(300%) hue-rotate(180deg) brightness(100%) contrast(90%);">
 </p>
 
-<h1 align="center">I'm S_\Vi 👋</h1>
+<h1 align="center">👋</h1>
 
 ```yaml
 name: Vi
@@ -28,8 +28,8 @@ hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
 <strong>Coding Activity </strong>
 </p>
 
-[![EIRSVi's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=EIRSVi&bg_color=0f0f0f&color=1df500&line=00fbff&point=fcf7fa&area=true&hide_border=true)] 
-<!-- (https://github.com/ashutosh00710/github-readme-activity-graph) -->
+![EIRSVi's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=EIRSVi&bg_color=0f0f0f&color=1df500&line=00fbff&point=fcf7fa&area=true&hide_border=true)
+
 <p align="center">
 <strong> GitHub Stats </strong>
 </p>
@@ -40,15 +40,12 @@ hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EIRSVi&layout=donut&theme=radical&hide_border=true" alt="Top Languages" width="40%" />
 </p>
 
-<p align="center">
-<strong>GitHub Achievements </strong>
-</p> 
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=EIRSVi&theme=radical&row=1&column=7" alt="GitHub Trophies" width="100%" />
-</p>
+
+
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi" alt="Coding Activity" width="50%" />
 </p>
+
 <p align="center">
 <strong>Featured Projects </strong>
 </p>
@@ -69,22 +66,19 @@ hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
   <!-- You can add more featured projects here -->
 </p>
 
-
-
 <p align="center">
-<strong>Tech Stack </strong>
-</p>
+<strong>GitHub Achievements </strong>
+</p> 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=&perline=3" />
+  <img src="https://github-profile-trophy.vercel.app/?username=EIRSVi&theme=radical&row=1&column=7" alt="GitHub Trophies" width="50%" />
 </p>
-
-
 
 
 
 <p align="center">
 
 <strong>Tools </strong>
+</p>
 </p>
 
 <p align="center"> <a href="https://skillicons.dev"> <img src="https://skillicons.dev/icons?i=laravel,linux,git,bash,vscode,idea,atom,java,py,js,ts,react,nextjs,mysql,postman,windows" /> </a> </p>
