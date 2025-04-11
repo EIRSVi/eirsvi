@@ -28,15 +28,13 @@ hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
 
 <p align="center">
 <strong> GitHub Stats </strong>
-
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EIRSVi&layout=donut&theme=radical&hide_border=true" alt="Top Languages" width="40%" />
 <br>
-
-   <img src="https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi" alt="Coding Activity" width="50%" />
-
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EIRSVi&layout=donut&theme=radical&hide_border=true" alt="Top Languages" width="60%" />
 <br>
-
-  <img src="https://github-readme-stats.vercel.app/api?username=EIRSVi&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="EIRSVi's GitHub Stats" width="48%" /> <br>
+  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi" alt="Coding Activity" width="60%" />
+<br>
+  <img src="https://github-readme-stats.vercel.app/api?username=EIRSVi&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="EIRSVi's GitHub Stats" width="60%" /> 
+<br>
 </p>
  
 
@@ -70,18 +68,17 @@ hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
 <strong>GitHub Achievements </strong>
 </p> 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=EIRSVi&theme=radical&row=1&column=7" alt="GitHub Trophies" width="70%" />
+  <img src="https://github-profile-trophy.vercel.app/?username=EIRSVi&theme=radical&row=1&column=7" alt="GitHub Trophies" width="80%" />
 </p>
 
 
 
 <p align="center">
-
 <strong>Tools </strong>
 </p>
-</p>
 
-<p align="center"> <a href="https://skillicons.dev"> <img src="https://skillicons.dev/icons?i=laravel,linux,git,bash,vscode,idea,atom,java,py,js,ts,react,nextjs,mysql,postman,windows" /> </a> </p>
+
+<p align="center"> <a href="https://skillicons.dev"> <img src="https://skillicons.dev/icons?i=laravel,linux,git,bash,vscode,idea,atom,java,js,ts,react,nextjs,mysql,postman,windows" /> </a> </p>
 
 
 ---
