@@ -28,7 +28,6 @@ hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
 
 
 <p align="center">
-<strong> Github Stat </strong>
 
 <br>
 <br>
