@@ -25,9 +25,10 @@ hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
 ```
 ![EIRSVi's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=EIRSVi&bg_color=0f0f0f&color=1df500&line=00fbff&point=fcf7fa&area=true&hide_border=true)
 
+--- 
 
 <p align="center">
-<strong> GitHub Stats </strong>
+<strong style="font-size: 24px;"> GitHub Stats </strong>
 <br>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EIRSVi&layout=donut&theme=radical&hide_border=true" alt="Top Languages" width="60%" />
 <br>
@@ -39,28 +40,16 @@ hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
  
 
 
-
-
-
-
-
 <p align="center">
 <strong>Featured Projects </strong>
 </p>
 <p align="center">
   <a href="https://github.com/kmJBuCa/backend-ject">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=kmJBuCa&repo=backend-ject&theme=radical&hide_border=true" />
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=kmJBuCa&repo=backend-ject&theme=radical&hide_border=true" alt="Coding Activity" width="60%"  />
   </a>
 <br>
 
-<!--  -->
-<a href="https://github.com/kmJBuCa/backend-ject">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=kmJBuCa&repo=backend-ject&theme=radical&hide_border=true" />
-  </a>
-<br>
-<a href="https://github.com/kmJBuCa/backend-ject">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=kmJBuCa&repo=backend-ject&theme=radical&hide_border=true" />
-  </a>
+
   <!-- You can add more featured projects here -->
 </p>
 
