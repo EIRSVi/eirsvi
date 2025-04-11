@@ -1,10 +1,5 @@
 # <img src="assets/githubcopilot.svg" width="30" height="30" style="vertical-align: middle; filter: invert(60%) sepia(50%) saturate(300%) hue-rotate(180deg) brightness(100%) contrast(90%)"> Hi there, I'm S_\Vi 👋 
 
-##  Connect with me
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=twitter" />
-</p>
 
 ##  About Me
 
@@ -13,14 +8,16 @@ I'm a **Developer** and ** !!!!!!!!!!!!!!!!! ** based !!!!!!!!!!!!!!!!!!!. I lov
 ##  Tech Stack
 
 <p align="center">
- [![My Skills](https://skillicons.dev/icons?i=laravel,linux,git,bash,vscode,idea,atom,java,py,js,ts,react,nextjs&perline=3)](https://skillicons.dev)
+<img src="https://skillicons.dev/icons?i=laravel,linux,git,bash,vscode,idea,atom,java,py,js,ts,react,nextjs&perline=3" />
 </p>
 
 ##  GitHub Stats
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=EIRSVi&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="EIRSVi's GitHub Stats" width="48%" /> <br>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EIRSVi&layout=donut&theme=radical&hide_border=true" alt="Top Languages" width="40%" />
+<br>
+ 
+ <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EIRSVi&layout=donut&theme=radical&hide_border=true" alt="Top Languages" width="40%" />
 </p>
 
 ##  GitHub Achievements
@@ -35,10 +32,13 @@ I'm a **Developer** and ** !!!!!!!!!!!!!!!!! ** based !!!!!!!!!!!!!!!!!!!. I lov
   <a href="https://github.com/kmJBuCa/backend-ject">
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=kmJBuCa&repo=backend-ject&theme=radical&hide_border=true" />
   </a>
+<br>
+
 <!--  -->
 <a href="https://github.com/kmJBuCa/backend-ject">
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=kmJBuCa&repo=backend-ject&theme=radical&hide_border=true" />
   </a>
+<br>
 <a href="https://github.com/kmJBuCa/backend-ject">
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=kmJBuCa&repo=backend-ject&theme=radical&hide_border=true" />
   </a>
