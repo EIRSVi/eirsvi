@@ -23,28 +23,29 @@ currently_learning: ["Web3", "React", "Nextjs"]
 will_learn: ["Blockchain (backend)"]
 hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
 ```
-
-<p align="center">
-<strong>Coding Activity </strong>
-</p>
-
 ![EIRSVi's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=EIRSVi&bg_color=0f0f0f&color=1df500&line=00fbff&point=fcf7fa&area=true&hide_border=true)
+
 
 <p align="center">
 <strong> GitHub Stats </strong>
-</p>
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=EIRSVi&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="EIRSVi's GitHub Stats" width="48%" /> <br>
-<br>
- 
- <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EIRSVi&layout=donut&theme=radical&hide_border=true" alt="Top Languages" width="40%" />
-</p>
-
-
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi" alt="Coding Activity" width="50%" />
 </p>
+
+</p>
+ <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EIRSVi&layout=donut&theme=radical&hide_border=true" alt="Top Languages" width="40%" />
+</p><br>
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=EIRSVi&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="EIRSVi's GitHub Stats" width="48%" /> <br>
+</p>
+ 
+
+
+
+
+
+
 
 <p align="center">
 <strong>Featured Projects </strong>
@@ -70,7 +71,7 @@ hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
 <strong>GitHub Achievements </strong>
 </p> 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=EIRSVi&theme=radical&row=1&column=7" alt="GitHub Trophies" width="50%" />
+  <img src="https://github-profile-trophy.vercel.app/?username=EIRSVi&theme=radical&row=1&column=7" alt="GitHub Trophies" width="70%" />
 </p>
 
 
