@@ -3,16 +3,9 @@
 </p>
 
 <h1 align="center">I'm S_\Vi 👋</h1>
-<p align="center">
-  <strong>About Me</strong>
-</p>
-I'm a **)(*97&*^&^556$%^$$34#2#!31@!!`@14** and )8{]&%@!_-}\\|][8*)98(*&*^&*%6743@#!!3%6*90). I love coding, open source, research and technology. Here you'll find some of my projects, contributions, and interests. Feel free to explore!
 
 <p align="center">
 <strong>Coding Activity </strong>
-</p>
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi" alt="Coding Activity" width="70%" />
 </p>
 
 [![EIRSVi's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=EIRSVi&bg_color=0f0f0f&color=1df500&line=00fbff&point=fcf7fa&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
@@ -22,12 +15,8 @@ I'm a **)(*97&*^&^556$%^$$34#2#!31@!!`@14** and )8{]&%@!_-}\\|][8*)98(*&*^&*%674
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=EIRSVi&theme=radical&row=1&column=7" alt="GitHub Trophies" width="100%" />
 </p>
-
 <p align="center">
-<strong>Tech Stack </strong>
-</p>
-<p align="center">
-<img src="https://skillicons.dev/icons?i=laravel,linux,git,bash,vscode,idea,atom,java,py,js,ts,react,nextjs&perline=3" />
+  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi" alt="Coding Activity" width="70%" />
 </p>
 <p align="center">
 <strong> GitHub Stats </strong>
@@ -38,6 +27,39 @@ I'm a **)(*97&*^&^556$%^$$34#2#!31@!!`@14** and )8{]&%@!_-}\\|][8*)98(*&*^&*%674
  
  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EIRSVi&layout=donut&theme=radical&hide_border=true" alt="Top Languages" width="40%" />
 </p>
+
+<p align="center">
+  <strong>About Me</strong>
+</p>
+
+```yaml
+name: Vi
+located_in: Siem Reap, KH
+from: Kratie
+job: (8&*^&5%^$%#@#$@)
+education: [")(*(*&&*^&%^#$%!!@##%$&^&*&*))"]
+company: Technology Innovation Institute
+past experiences:
+  - ["XXXX XXXXX XXXX", "XXX XX", "Technology Innovation Institute", "KH", "0000-0000"]
+
+
+fields_of_interests: ["Path Planning", "Trajectory Planning", "Path Following", "Behaviour Planning", 
+                      "Localization", "Sensor Fusion", "Embedded Systems"]
+technical_background: ["Motion Planning", "Optimization", 
+                       "Nonlinear Control", "Real-Time Systems", "Automated Planning"]
+currently_learning: ["Web3", "React", "Nextjs"]
+will_learn: ["Blockchain (backend)"]
+hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
+```
+
+
+<p align="center">
+<strong>Tech Stack </strong>
+</p>
+<p align="center">
+<img src="https://skillicons.dev/icons?i=laravel,linux,git,bash,vscode,idea,atom,java,py,js,ts,react,nextjs&perline=3" />
+</p>
+
 
 
 
