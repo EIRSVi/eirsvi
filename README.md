@@ -29,14 +29,13 @@ hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
 <p align="center">
 <strong> GitHub Stats </strong>
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi" alt="Coding Activity" width="50%" />
-</p>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EIRSVi&layout=donut&theme=radical&hide_border=true" alt="Top Languages" width="40%" />
+<br>
 
-</p>
- <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EIRSVi&layout=donut&theme=radical&hide_border=true" alt="Top Languages" width="40%" />
-</p><br>
-<p align="center">
+   <img src="https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi" alt="Coding Activity" width="50%" />
+
+<br>
+
   <img src="https://github-readme-stats.vercel.app/api?username=EIRSVi&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="EIRSVi's GitHub Stats" width="48%" /> <br>
 </p>
  
