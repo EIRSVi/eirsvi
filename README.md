@@ -23,13 +23,14 @@ currently_learning: ["Web3", "React", "Nextjs"]
 will_learn: ["Blockchain (backend)"]
 hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
 ```
-![EIRSVi's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=EIRSVi&bg_color=0f0f0f&color=1df500&line=00fbff&point=fcf7fa&area=true&hide_border=true)
 
 --- 
 
 
 <p align="center">
-<strong>Github Start</strong>
+<strong> Github Stat </strong>
+
+<br>
 <br>
   <img src="https://github-readme-stats.vercel.app/api?username=EIRSVi&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="EIRSVi's GitHub Stats" width="60%" /> 
 
@@ -40,7 +41,9 @@ hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
 <br>
 
 </p>
- 
+
+ ![EIRSVi's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=EIRSVi&bg_color=0f0f0f&color=1df500&line=00fbff&point=fcf7fa&area=true&hide_border=true)
+
 
 
 <p align="center">
