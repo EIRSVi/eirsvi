@@ -26,16 +26,16 @@ hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
 ![EIRSVi's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=EIRSVi&bg_color=0f0f0f&color=1df500&line=00fbff&point=fcf7fa&area=true&hide_border=true)
 
 --- 
-
-<p align="center">
 <strong style="font-size: 24px;"> GitHub Stats </strong>
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=EIRSVi&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="EIRSVi's GitHub Stats" width="60%" /> 
+
 <br>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EIRSVi&layout=donut&theme=radical&hide_border=true" alt="Top Languages" width="60%" />
 <br>
   <img src="https://github-readme-stats.vercel.app/api/wakatime?username=eirsvi" alt="Coding Activity" width="60%" />
 <br>
-  <img src="https://github-readme-stats.vercel.app/api?username=EIRSVi&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="EIRSVi's GitHub Stats" width="60%" /> 
-<br>
+
 </p>
  
 
