@@ -82,4 +82,3 @@ hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
 </p>
 
 
-https://1drv.ms/p/s!Ahzg3X76hatQhA0Q06aEbzEL8Mv0?e=5Myq5J
