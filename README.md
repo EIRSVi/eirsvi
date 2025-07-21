@@ -12,7 +12,7 @@ job: (8&*^&5%^$%#@#$@)
 education: [")(*(*&&*^&%^#$%!!@##%$&^&*&*))"]
 company: Technology Innovation Institute
 past experiences:
-  - ["XXXX XXXXX XXXX", "XXX XX", "Technology Innovation Institute", "KH", "0000-0000"]
+  - ["#£&@##££&_.   @##££&£#&", "XXX XX", "Technology Innovation Institute", "KH", "0000-0000"]
 
 
 fields_of_interests: ["Path Planning", "Trajectory Planning", "Path Following", "Behaviour Planning", 
