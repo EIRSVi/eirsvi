@@ -47,7 +47,7 @@ hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
 </p>
 <p align="center">
   <a href="https://github.com/kmJBuCa/backend-ject">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=kmJBuCa&repo=backend-ject&theme=radical&hide_border=true" alt="Coding Activity" width="60%"  />
+<!--     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=kmJBuCa&repo=backend-ject&theme=radical&hide_border=true" alt="Coding Activity" width="60%"  /> -->
   </a>
 <br>
 
