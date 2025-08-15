@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="assets/githubcopilot.svg" width="30" height="30" style="filter: invert(60%) sepia(50%) saturate(300%) hue-rotate(180deg) brightness(100%) contrast(90%);">
-</p>
 
 <h1 align="center">👋</h1>
 
