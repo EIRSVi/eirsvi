@@ -78,4 +78,4 @@ hobbies: ["Football", "Cinema", "Competitive Gaming", "IoT"]
   <img src="https://komarev.com/ghpvc/?username=EIRSVi&label=PROFILE+VIEWS&style=for-the-badge&color=blueviolet" alt="Profile Views" />
 </p>
 
-
+fGFJEC1jbcAub40ZDn6^
