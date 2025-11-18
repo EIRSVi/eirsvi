@@ -11,16 +11,3 @@
 </p>
 
 
-C:\Windows\System32\drivers\etc\hosts
-C:\xampp\apache\conf\httpd.conf   # 
-C:\xampp\apache\conf\extra\httpd-vhosts.conf
-
-<VirtualHost *:80>
-    DocumentRoot "C:/xampp/htdocs"
-    ServerName localhost
-</VirtualHost>
-
-<VirtualHost *:80>
-    DocumentRoot "C:/xampp/htdocs/myproject"
-    ServerName mysite.local
-</VirtualHost>
