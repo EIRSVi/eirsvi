@@ -13,8 +13,7 @@
 ### Setup
 
 1. Create a WakaTime account at https://wakatime.com.
-2. Install the WakaTime plugin for your editor/IDE on macOS.
+2. Install the WakaTime plugin for your editor/IDE.
 3. Copy your API key from https://wakatime.com/settings/account and paste it into the plugin.
 4. Set your WakaTime profile to Public (WakaTime Settings → Privacy).
 5. If your WakaTime username is different, replace `username=shiliaiwei` in the image URL above.
-
