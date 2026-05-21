@@ -10,6 +10,12 @@
   <img src="https://github-readme-stats.vercel.app/api/wakatime?username=YOUR_WAKATIME_ID&layout=compact&theme=github-compact" alt="WakaTime Coding Time" />
 </p>
 
+## Language Usage
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shiliaiwei&layout=compact&theme=github-compact" alt="Top Languages" />
+</p>
+
 ### Setup
 
 1. Create a WakaTime account at https://wakatime.com.
