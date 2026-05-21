@@ -22,4 +22,4 @@
 2. Install the WakaTime plugin for your editor/IDE.
 3. Copy your API key from https://wakatime.com/settings/account and paste it into the plugin.
 4. Set your WakaTime profile to Public (WakaTime Settings → Privacy).
-5. Replace `username=YOUR_WAKATIME_ID` in the image URL above with your WakaTime identifier.
+5. Replace `username=YOUR_WAKATIME_ID` in the WakaTime image URL above with your WakaTime identifier.
