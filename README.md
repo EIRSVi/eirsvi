@@ -26,27 +26,29 @@
 
 <p align="center">
 
-**Primary Languages Used:**
+### Primary Languages Used
 
-| Language | Percentage | Badge |
-|----------|-----------|-------|
-| JavaScript | 45% | ![JavaScript](https://img.shields.io/badge/JavaScript-45%25-F7DF1E?style=for-the-badge&logo=javascript) |
-| Python | 30% | ![Python](https://img.shields.io/badge/Python-30%25-3776AB?style=for-the-badge&logo=python) |
-| Markdown | 15% | ![Markdown](https://img.shields.io/badge/Markdown-15%25-000000?style=for-the-badge&logo=markdown) |
-| Other | 10% | ![Other](https://img.shields.io/badge/Other-10%25-A0A0A0?style=for-the-badge) |
+| Language | Percentage |
+|----------|-----------|
+| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | 45% |
+| ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) | 30% |
+| ![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white) | 15% |
+| ![Other](https://img.shields.io/badge/Other-A0A0A0?style=flat-square) | 10% |
+
+**Total: 100%**
 
 </p>
 
----
-
-## Technology Stack
-
 <p align="center">
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+### Language Distribution
+
+```
+JavaScript  ████████████████░░░░░░░░░░░░░░░░░░░░░░  45%
+Python      ███████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░  30%
+Markdown    █████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  15%
+Other       ███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  10%
+```
 
 </p>
 
