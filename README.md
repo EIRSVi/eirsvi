@@ -6,15 +6,20 @@
 
 ---
 
-## Last Commit Tracking
+## Real-Time Activity Tracking
 
 <p align="center">
 
-| Metric | Status |
-|--------|--------|
-| Last Commit Time (ICT) | [![Last Commit](https://img.shields.io/badge/dynamic/json?url=https://api.github.com/repos/shiliaiwei/shiliaiwei/commits?per_page=1&query=$[0].commit.committer.date&label=Last%20Commit%20%28ICT%29&color=FF6B6B&style=for-the-badge)](https://github.com/shiliaiwei/shiliaiwei/commits) |
-| Repository Status | [![Commits](https://img.shields.io/github/last-commit/shiliaiwei/shiliaiwei?style=for-the-badge&label=Updated&color=4ECDC4)](https://github.com/shiliaiwei/shiliaiwei) |
-| Active Tracking | [![Status](https://img.shields.io/badge/Status-Live%20Tracking-4A90E2?style=for-the-badge)](https://github.com/shiliaiwei/shiliaiwei) |
+### Live Tracking Methods
+
+| Tracking Source | Real-Time Data | Last Updated |
+|-----------------|----------------|--------------|
+| **GitHub API** | [![GitHub Commits](https://img.shields.io/github/last-commit/shiliaiwei/shiliaiwei?style=for-the-badge&label=Last%20Commit&color=FF6B6B)](https://github.com/shiliaiwei/shiliaiwei/commits) | Live |
+| **Repository Stats** | [![Repo Size](https://img.shields.io/github/repo-size/shiliaiwei/shiliaiwei?style=for-the-badge&label=Repo%20Size&color=4ECDC4)](https://github.com/shiliaiwei/shiliaiwei) | Live |
+| **GitHub Commits** | [![Commits](https://img.shields.io/github/commit-activity/m/shiliaiwei/shiliaiwei?style=for-the-badge&label=Monthly%20Commits&color=4A90E2)](https://github.com/shiliaiwei/shiliaiwei/commits) | Live |
+| **Repository Status** | [![Open Issues](https://img.shields.io/github/issues/shiliaiwei/shiliaiwei?style=for-the-badge&label=Open%20Issues&color=FFD93D)](https://github.com/shiliaiwei/shiliaiwei/issues) | Live |
+| **Pull Requests** | [![Open PRs](https://img.shields.io/github/issues-pr/shiliaiwei/shiliaiwei?style=for-the-badge&label=Pull%20Requests&color=6BCB77)](https://github.com/shiliaiwei/shiliaiwei/pulls) | Live |
+| **Contributors** | [![Contributors](https://img.shields.io/github/contributors/shiliaiwei/shiliaiwei?style=for-the-badge&label=Contributors&color=FF6B9D)](https://github.com/shiliaiwei/shiliaiwei/graphs/contributors) | Live |
 
 **Time Zone: Cambodia (ICT - UTC+7)**
 
