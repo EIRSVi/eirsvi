@@ -12,5 +12,9 @@
 
 ![Top Languages](https://github-readme-stats.shion.dev/api/top-langs/?username=shiliaiwei&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
-
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="light_mode.svg" />
+  <img alt="shiliaiwei's GitHub profile" src="dark_mode.svg" />
+</picture>
 </div>
