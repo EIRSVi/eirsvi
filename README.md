@@ -1,10 +1,6 @@
 <div align="center">
 
-## GitHub Activity
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=shiliaiwei&theme=github-compact&custom_title=GitHub%20Activity%20(Last%2031%20days)&hide_border=true&area=true" alt="GitHub Activity Graph" width="100%">
-
-## GitHub Stats
 
 ![GitHub Stats](https://github-readme-stats.shion.dev/api?username=shiliaiwei&theme=dark&hide_border=false&include_all_commits=false&count_private=false)
 
@@ -18,3 +14,4 @@
   <img alt="shiliaiwei's GitHub profile" src="dark_mode.svg" />
 </picture>
 </div>
+///
