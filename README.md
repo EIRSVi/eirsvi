@@ -14,4 +14,3 @@
   <img alt="shiliaiwei's GitHub profile" src="dark_mode.svg" />
 </picture>
 </div>
-///
