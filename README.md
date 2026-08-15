@@ -4,7 +4,7 @@
 
 ![GitHub Stats](https://github-readme-stats.shion.dev/api?username=shiliaiwei&theme=dark&hide_border=false&include_all_commits=false&count_private=false)
 
-![GitHub Streak](https://streak-stats.demolab.com/?user=shiliaiwei&theme=dark&hide_border=false)
+
 
 ![Top Languages](https://github-readme-stats.shion.dev/api/top-langs/?username=shiliaiwei&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
